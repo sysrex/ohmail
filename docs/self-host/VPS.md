@@ -80,7 +80,7 @@ working default. The five:
   Generate it with `openssl rand -hex 32`. **Copy this value somewhere safe
   now** — a password manager is fine. Losing it means every connected
   mailbox has to be re-entered. See [BACKUP.md](./BACKUP.md).
-- **`MINIO_ROOT_PASSWORD`** — the attachment-staging store's credential.
+- **`RUSTFS_ROOT_PASSWORD`** — the attachment-staging store's credential.
   `openssl rand -hex 24`. It never leaves the box, but pick a real value.
 - **`TF_ORGANIZER_INSTALL_ID`** — this install's organizer identity, the name
   its claim carries inside each connected mailbox (`ohmail/_meta`). That claim
@@ -182,9 +182,9 @@ The first start pulls the images, creates the database, and applies the
 schema. Watch it settle with `docker compose ps`. What a good boot looks
 like, within a couple of minutes:
 
-- `web`, `api`, `organizer`, `db`, `minio`, `mailpit` — `running (healthy)`
+- `web`, `api`, `organizer`, `db`, `rustfs`, `mailpit` — `running (healthy)`
 - `proxy` — `running` (it carries no health check)
-- `minio-init` — gone from `ps`, or `Exited (0)` in `docker compose ps -a`:
+- `rustfs-init` — gone from `ps`, or `Exited (0)` in `docker compose ps -a`:
   it runs once to create the staging bucket and is supposed to exit.
 
 ## 6. Create the first account

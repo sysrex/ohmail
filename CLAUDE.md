@@ -41,6 +41,9 @@ phone app. On a pull request the platform jobs and the phone build run only when
 their tools or the push gate's baseline. Tests sit beside the code they cover: `apps/desktop/test`, and the
 `*_tests.rs` files in `apps/desktop/src-tauri/src`. Add or extend a test for behaviour you change.
 
+The phone app (`apps/mobile`) has two root commands: `npm run typecheck:mobile` and `npm run test:mobile`
+(CONTRIBUTING.md, "Running the tests").
+
 ## Rules the suite enforces
 
 - Colours and shadows come from `packages/tokens`, never hand-written in a view.

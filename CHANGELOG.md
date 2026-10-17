@@ -13,6 +13,13 @@ See [Status](README.md#status--read-this-first).
 
 ## [Unreleased]
 
+### Still to come
+
+Signed installers — a real Apple Developer ID and an Authenticode certificate. See
+[Roadmap](README.md#roadmap).
+
+## [0.27.1] — 2026-10-17
+
 ### The desktop window can no longer be navigated away from the app
 
 The desktop window now refuses to load any page that is not the app's own; links still open in your browser.
@@ -66,11 +73,6 @@ When the database dropped one of the server's connections while a write was on i
 answering for good, and the next sync that used it waited for ever: new mail stopped arriving until the server was
 restarted, and nothing reported it as down. Now only the write that was on the connection fails, and the next one
 reconnects and carries on.
-
-### Still to come
-
-Signed installers — a real Apple Developer ID and an Authenticode certificate. See
-[Roadmap](README.md#roadmap).
 
 ## [0.27.0] — 2026-10-17
 
@@ -12550,7 +12552,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.0...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.1...HEAD
+[0.27.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.1
 [0.27.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.0
 [0.26.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.26.1
 [0.26.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.26.0

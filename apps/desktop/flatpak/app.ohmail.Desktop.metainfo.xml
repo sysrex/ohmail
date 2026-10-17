@@ -74,6 +74,20 @@
   </screenshots>
 
   <releases>
+    <release version="0.27.1" date="2026-10-17">
+      <description>
+        <ul>
+          <li>The desktop window can no longer be navigated away from the app</li>
+          <li>Signing out of the web app no longer hangs, and ohmail.app no longer reloads in a loop afterwards</li>
+          <li>A picture or attachment opened while its message was being filed no longer shows blank</li>
+          <li>Signing up for ohmail Cloud keeps your place when connecting a mailbox</li>
+          <li>A new ohmail Cloud account that has not started its trial is offered the trial</li>
+          <li>Signing up from a plan on ohmail.app remembers the plan</li>
+          <li>German now says Mail, not Post</li>
+          <li>Mail keeps syncing after the database drops a connection mid-write</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.27.0" date="2026-10-17">
       <description>
         <ul>
@@ -131,25 +145,6 @@
           <li>Folders deleted on the mail server leave the folder list</li>
           <li>Revoking a rule that filed letters after a hand-back works</li>
           <li>Hand the mailbox back lets go within seconds</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.25.23" date="2026-10-13">
-      <description>
-        <ul>
-          <li>Layout fixes on tablets and phones</li>
-          <li>A first search after a pause on ohmail Cloud reads less from disk</li>
-          <li>Android foldables keep the reply through every posture</li>
-          <li>The offer to file letters that arrived after a hand-back is shown</li>
-          <li>Mailboxes nothing organizes say so in the Ohbox and on the sender sheets</li>
-          <li>The phone's Screener counts every waiting sender</li>
-          <li>A deleted letter leaves Answer Later</li>
-          <li>A screen-out says its unsubscribe request before you press</li>
-          <li>Enter works on every setup step</li>
-          <li>The AI features move to Anthropic's 5.5 models</li>
-          <li>Layout fixes for replies, touch screens, large text and the iPad</li>
-          <li>Organize here starts organizing within seconds</li>
-          <li>The Screener's row menu stays on screen on small phones</li>
         </ul>
       </description>
     </release>

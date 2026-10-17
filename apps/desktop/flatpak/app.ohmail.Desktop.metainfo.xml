@@ -74,6 +74,29 @@
   </screenshots>
 
   <releases>
+    <release version="0.27.0" date="2026-10-17">
+      <description>
+        <ul>
+          <li>Other mailboxes keep syncing while one works through a large import</li>
+          <li>Opening a message full of pictures takes far less memory</li>
+          <li>A server alert nobody was told about is sent once the server can say it</li>
+          <li>Long conversations take far less of the desktop window's memory</li>
+          <li>Away and signature edits are kept until you save or discard them</li>
+          <li>The desktop app can use OpenCode Go</li>
+          <li>Draft reply works in the desktop app</li>
+          <li>A self-hosted server can use OpenAI, OpenCode Go or Ollama</li>
+          <li>A first start, a renamed folder and a resync lose nothing quietly</li>
+          <li>New mail shows up on the desktop within seconds again</li>
+          <li>The phone keeps a saved change through a power cut</li>
+          <li>A self-hosted install keeps attachments in RustFS</li>
+          <li>A self-hosted update reaches the proxy</li>
+          <li>An attachment up to 40 MiB opens and saves on the desktop</li>
+          <li>Previewing a large attachment on the desktop no longer costs a gigabyte of memory</li>
+          <li>The desktop app writes its store to the disk when you pause</li>
+          <li>Long values in Settings wrap</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.26.1" date="2026-10-16">
       <description>
         <ul>
@@ -127,26 +150,6 @@
           <li>Layout fixes for replies, touch screens, large text and the iPad</li>
           <li>Organize here starts organizing within seconds</li>
           <li>The Screener's row menu stays on screen on small phones</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.25.22" date="2026-10-12">
-      <description>
-        <ul>
-          <li>Search on the desktop answers at once while mail syncs</li>
-          <li>Idle syncs cost less CPU</li>
-          <li>Agreeing to organize screens what setup counted</li>
-          <li>The Screener says what a decision does</li>
-          <li>A draft deleted on another device says so in the editor</li>
-          <li>The worker reports a database outage wherever it meets one</li>
-          <li>The list cursor stays on screen, and dialogs keep their keys</li>
-          <li>The first company-name letter through a mailing list waits at the Screener</li>
-          <li>Letters that arrive after a hand-back are offered for filing</li>
-          <li>A handed-back mailbox is no longer called all clear</li>
-          <li>The desktop's Mailboxes chip says when a phone stopped organizing</li>
-          <li>Organize on this phone shows Starting</li>
-          <li>A phone connected to a mailbox starts organizing it within seconds</li>
-          <li>Search on ohmail Cloud finds the closest words to a mistyped word faster</li>
         </ul>
       </description>
     </release>

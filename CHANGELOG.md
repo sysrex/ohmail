@@ -13,6 +13,13 @@ See [Status](README.md#status--read-this-first).
 
 ## [Unreleased]
 
+### Still to come
+
+Signed installers — a real Apple Developer ID and an Authenticode certificate. See
+[Roadmap](README.md#roadmap).
+
+## [0.27.0] — 2026-10-17
+
 ### Other mailboxes keep syncing while one works through a large import
 
 On a server with several mailboxes, one mailbox working through a large import could hold up the regular check of
@@ -50,6 +57,18 @@ On the web and the desktop, an away message typed before a save that could not r
 field under the sentence that says it did not save, as on the phone. An edit made while a save waits for the
 computer that organizes the mailbox is kept when that save lands, and leaving asks first. Leaving Settings →
 Signatures with an edited signature now asks before it is dropped.
+
+### The desktop app can use OpenCode Go
+
+The desktop app can now make suggestions and drafts with your OpenCode Go key: choose it in Settings → Desktop,
+under *AI for suggestions and drafts*, then one of the models your Go workspace offers. Contributed by Daniel
+Muñoz in #42.
+
+### Draft reply works in the desktop app
+
+In the desktop app, Draft reply always answered "Drafting needs a connected account." It now writes the draft
+into the editor with the model you set up, or through your ohmail Cloud account. Contributed by Daniel Muñoz
+in #39.
 
 ### A self-hosted server can use OpenAI, OpenCode Go or Ollama
 
@@ -120,10 +139,16 @@ is too large to preview and offers to save it. A PDF is not fetched to be previe
 when the preview closes or the app quits, and one left by a crash or an update is removed at the next start.
 The desktop also no longer carries a command that could write a file the window chose and open it.
 
-### Still to come
+### The desktop app writes its store to the disk when you pause
 
-Signed installers — a real Apple Developer ID and an Authenticode certificate. See
-[Roadmap](README.md#roadmap).
+On a large mailbox, a list, an open or a search in the desktop app could wait up to about two seconds while the
+app wrote its local store to the disk. That write now waits until nothing you asked for has run for two seconds,
+or at most 30 seconds.
+
+### Long values in Settings wrap
+
+In Settings, a long value wraps inside its pane instead of running past its edge. Contributed by Daniel Muñoz in
+#37.
 
 ## [0.26.1] — 2026-10-16
 
@@ -12471,7 +12496,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.26.1...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.0...HEAD
+[0.27.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.0
 [0.26.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.26.1
 [0.26.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.26.0
 [0.25.24]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.25.24

@@ -13,6 +13,13 @@ See [Status](README.md#status--read-this-first).
 
 ## [Unreleased]
 
+### Still to come
+
+Signed installers — a real Apple Developer ID and an Authenticode certificate. See
+[Roadmap](README.md#roadmap).
+
+## [0.27.2] — 2026-10-18
+
 ### Signing up in German stays in German
 
 A German signup was answered in English at almost every turn: the confirmation mail, the "you already have an
@@ -61,11 +68,6 @@ Staff with the support, billing or owner role can mail an account's owner a link
 at most three times per account in any 24 hours. The mail goes to the account's own login address in the
 account's language, and the link carries no sign-in: the page opens only after signing in to ohmail. Each send
 is recorded in the staff audit before the mail leaves.
-
-### Still to come
-
-Signed installers — a real Apple Developer ID and an Authenticode certificate. See
-[Roadmap](README.md#roadmap).
 
 ## [0.27.1] — 2026-10-17
 
@@ -12601,7 +12603,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.1...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.2...HEAD
+[0.27.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.2
 [0.27.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.1
 [0.27.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.0
 [0.26.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.26.1

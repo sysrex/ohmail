@@ -13,6 +13,13 @@ See [Status](README.md#status--read-this-first).
 
 ## [Unreleased]
 
+### Still to come
+
+Signed installers — a real Apple Developer ID and an Authenticode certificate. See
+[Roadmap](README.md#roadmap).
+
+## [0.27.3] — 2026-10-19
+
 ### Narrower link opening on the desktop
 
 A web address now goes to your browser only when the window reported it as a link it draws — in a message,
@@ -62,11 +69,6 @@ toward the same lockout as signing in.
 
 Leaving the account deletion while your second factor was being checked (Back on the account wall, or another
 pane in Settings) could still delete the account once the check came back. Leaving now stops it, as Cancel does.
-
-### Still to come
-
-Signed installers — a real Apple Developer ID and an Authenticode certificate. See
-[Roadmap](README.md#roadmap).
 
 ## [0.27.2] — 2026-10-18
 
@@ -12653,7 +12655,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.2...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.3...HEAD
+[0.27.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.3
 [0.27.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.2
 [0.27.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.1
 [0.27.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.0

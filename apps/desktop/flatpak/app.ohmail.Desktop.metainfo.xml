@@ -74,6 +74,22 @@
   </screenshots>
 
   <releases>
+    <release version="0.27.4" date="2026-10-19">
+      <description>
+        <ul>
+          <li>A letter you read elsewhere during an import is now imported</li>
+          <li>Fewer background refreshes</li>
+          <li>The address view finds mail sent to someone in your whole mailbox</li>
+          <li>A slow mail server no longer holds up the other mailboxes</li>
+          <li>The first decision waits for the Screener</li>
+          <li>The pager reports its own failures</li>
+          <li>Staff with only the operations role see no mailbox sender name</li>
+          <li>No automatic screen-out or spam rule from an unconfirmed message</li>
+          <li>Forwarding right after opening a message</li>
+          <li>Signing out cancels sign-ins still waiting</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.27.3" date="2026-10-19">
       <description>
         <ul>
@@ -132,13 +148,6 @@
           <li>Previewing a large attachment on the desktop no longer costs a gigabyte of memory</li>
           <li>The desktop app writes its store to the disk when you pause</li>
           <li>Long values in Settings wrap</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.26.1" date="2026-10-16">
-      <description>
-        <ul>
-          <li>The Cloud deploy installs with the build host's npm</li>
         </ul>
       </description>
     </release>

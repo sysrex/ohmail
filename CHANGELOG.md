@@ -13,6 +13,13 @@ See [Status](README.md#status--read-this-first).
 
 ## [Unreleased]
 
+### Still to come
+
+Signed installers — a real Apple Developer ID and an Authenticode certificate. See
+[Roadmap](README.md#roadmap).
+
+## [0.27.4] — 2026-10-19
+
 ### A letter you read elsewhere during an import is now imported
 
 If you read or flagged a message in another app while ohmail was importing your mail, ohmail could store an empty
@@ -98,11 +105,6 @@ When you sign out everywhere, change your password or remove your authenticator,
 completed with one of them is now signed out as well; signing out your other web sessions does the same for a
 browser sign-in. A desktop signed in from the browser, by a link or by confirming it there, keeps the browser's
 verification time instead of starting a fresh five-minute window.
-
-### Still to come
-
-Signed installers — a real Apple Developer ID and an Authenticode certificate. See
-[Roadmap](README.md#roadmap).
 
 ## [0.27.3] — 2026-10-19
 
@@ -12741,7 +12743,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.3...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.4...HEAD
+[0.27.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.4
 [0.27.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.3
 [0.27.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.2
 [0.27.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.1

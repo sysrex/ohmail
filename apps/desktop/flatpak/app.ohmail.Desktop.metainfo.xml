@@ -74,6 +74,19 @@
   </screenshots>
 
   <releases>
+    <release version="0.27.3" date="2026-10-19">
+      <description>
+        <ul>
+          <li>Narrower link opening on the desktop</li>
+          <li>Unconfirmed mail from a company's own address</li>
+          <li>Confident suggestions acted on per sender</li>
+          <li>A self-hosted server pages you when the organizer stops</li>
+          <li>Coming back to ohmail.app after signing out no longer shows an empty page</li>
+          <li>Change your password</li>
+          <li>Back stops the account deletion</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.27.2" date="2026-10-18">
       <description>
         <ul>
@@ -126,22 +139,6 @@
       <description>
         <ul>
           <li>The Cloud deploy installs with the build host's npm</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.26.0" date="2026-10-16">
-      <description>
-        <ul>
-          <li>Self-built servers and workers start from the built files</li>
-          <li>The Screener answers in a fraction of the time on a large mailbox</li>
-          <li>The desktop app shows your mail sooner after it starts</li>
-          <li>Rules and drafts on the desktop survive a power cut</li>
-          <li>PDF previews work on a self-hosted install</li>
-          <li>A text field in a dialog keeps its focus on Linux</li>
-          <li>Screener purchases in the desktop app stop at the price you confirmed</li>
-          <li>Automatic suggestions skip mail kept out of automatic AI</li>
-          <li>Text size, and the same size on every Linux build</li>
-          <li>Larger attachments from the desktop app</li>
         </ul>
       </description>
     </release>

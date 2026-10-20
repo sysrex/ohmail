@@ -74,6 +74,20 @@
   </screenshots>
 
   <releases>
+    <release version="0.27.5" date="2026-10-20">
+      <description>
+        <ul>
+          <li>The first start is faster</li>
+          <li>A send that failed before reaching your mail server is retried for you</li>
+          <li>Letters an empty message stood in for are imported</li>
+          <li>The Ohbox says when mail was last checked and where it went</li>
+          <li>A meeting invitation that arrives as an Outlook link says so</li>
+          <li>The Junk segment also lists the spam ohmail keeps itself</li>
+          <li>Signing out also ends a sign-in being issued</li>
+          <li>The pager reads the billing program's own failures</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.27.4" date="2026-10-19">
       <description>
         <ul>
@@ -125,29 +139,6 @@
           <li>Signing up from a plan on ohmail.app remembers the plan</li>
           <li>German now says Mail, not Post</li>
           <li>Mail keeps syncing after the database drops a connection mid-write</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.27.0" date="2026-10-17">
-      <description>
-        <ul>
-          <li>Other mailboxes keep syncing while one works through a large import</li>
-          <li>Opening a message full of pictures takes far less memory</li>
-          <li>A server alert nobody was told about is sent once the server can say it</li>
-          <li>Long conversations take far less of the desktop window's memory</li>
-          <li>Away and signature edits are kept until you save or discard them</li>
-          <li>The desktop app can use OpenCode Go</li>
-          <li>Draft reply works in the desktop app</li>
-          <li>A self-hosted server can use OpenAI, OpenCode Go or Ollama</li>
-          <li>A first start, a renamed folder and a resync lose nothing quietly</li>
-          <li>New mail shows up on the desktop within seconds again</li>
-          <li>The phone keeps a saved change through a power cut</li>
-          <li>A self-hosted install keeps attachments in RustFS</li>
-          <li>A self-hosted update reaches the proxy</li>
-          <li>An attachment up to 40 MiB opens and saves on the desktop</li>
-          <li>Previewing a large attachment on the desktop no longer costs a gigabyte of memory</li>
-          <li>The desktop app writes its store to the disk when you pause</li>
-          <li>Long values in Settings wrap</li>
         </ul>
       </description>
     </release>

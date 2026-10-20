@@ -13,18 +13,12 @@ See [Status](README.md#status--read-this-first).
 
 ## [Unreleased]
 
-### Signing out also ends a sign-in being issued
+### Still to come
 
-Signing out everywhere, changing your password or removing your authenticator now also ends a sign-in whose
-code or confirmation was being issued at that same moment.
+Signed installers — a real Apple Developer ID and an Authenticode certificate. See
+[Roadmap](README.md#roadmap).
 
-### A meeting invitation that arrives as an Outlook link says so
-
-When a Microsoft 365 or Exchange server delivers a meeting invitation as an Outlook Web App link instead of
-the event, ohmail now says so above the message on the desktop, the web and the phone. It names the Outlook
-setting that makes future invitations arrive with the event and, on Microsoft 365, links to Microsoft's own
-settings page (never to an address taken from the message). A desktop signed in to Cloud showed nothing for
-these invitations before.
+## [0.27.5] — 2026-10-20
 
 ### The first start is faster
 
@@ -32,6 +26,15 @@ The desktop app writes its new local store to the disk once, when it is complete
 it builds. A first start opened the store in 2.2 s instead of 3.7 s on a Linux test machine, and saves more on
 macOS and Windows, where each of those 241 writes waited for the drive. A store that already holds your mail is
 still written to the disk after every change.
+
+### A send that failed before reaching your mail server is retried for you
+
+If your mail server could not be reached, was busy or answered too slowly before anything was sent, or a
+forward found all of ohmail's connections to that mailbox in use (downloads or images open at the time), ohmail
+now tries the same send again by itself: up to three attempts within two minutes, still one message. Meanwhile
+it says "Not sent yet. ohmail is still trying."; Cancel stops it. If your device stays offline past those two
+minutes, ohmail says once it is back that the message was not sent, and keeps it for you to send again. The
+Desktop, Cloud and phone apps all do this.
 
 ### Letters an empty message stood in for are imported
 
@@ -48,10 +51,41 @@ On your own server, `OHMAIL_BLANK_REPAIR` sets what the organizer does: unset, i
 affected message once while the organizer runs and logs counts of what the repair would do, changing nothing;
 `off` turns the repair off. Any other value stops the organizer from starting.
 
-### Still to come
+### The Ohbox says when mail was last checked and where it went
 
-Signed installers — a real Apple Developer ID and an Authenticode certificate. See
-[Roadmap](README.md#roadmap).
+Under the Ohbox title: when your mail was last checked and, since you were here, how many letters went to News,
+Receipts, Screened out and Spam. Each count opens that place. With "Use folders" on, the web and desktop apps leave
+the Spam count out, because the Screener then shows your mail server's own Junk folder, which may not hold those
+letters. If the sync is behind or failing, the line says that instead. Enter on a focused link now follows the link
+instead of opening the selected letter.
+
+### A meeting invitation that arrives as an Outlook link says so
+
+When a Microsoft 365 or Exchange server delivers a meeting invitation as an Outlook Web App link instead of
+the event, ohmail now says so above the message on the desktop, the web and the phone. It names the Outlook
+setting that makes future invitations arrive with the event and, on Microsoft 365, links to Microsoft's own
+settings page (never to an address taken from the message). A desktop signed in to Cloud showed nothing for
+these invitations before.
+
+### The Junk segment also lists the spam ohmail keeps itself
+
+With "Use folders" on, the Screener's Junk segment now also lists what sits in ohmail/Quarantine: spam ohmail
+filed there on its own, spam from a mailbox without a Junk folder, and earlier verdicts not yet moved, with the
+same Not spam choices. Coming back to the segment reads your mail server's Junk folder again, so mail filed there
+since shows up without reloading.
+
+### Signing out also ends a sign-in being issued
+
+Signing out everywhere, changing your password or removing your authenticator now also ends a sign-in whose
+code or confirmation was being issued at that same moment.
+
+### The pager reads the billing program's own failures
+
+For operators with `ENTITLEMENTS_URL`. Both alert drivers now read the entitlements program's `POST /v1/ops` on
+each pass (the organizer from its first shard only) and page a cron pass that stopped (`plane_pass_stale`), each
+billing alert the program holds (`billing_alert`), and a program they cannot read five passes in a row
+(`plane_ops_unreadable`). A program without the route pages nothing. A self-hosted server reads no program and
+logs `plane_ops_watch` off once at boot.
 
 ## [0.27.4] — 2026-10-19
 
@@ -12778,7 +12812,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.4...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.5...HEAD
+[0.27.5]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.5
 [0.27.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.4
 [0.27.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.3
 [0.27.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.2

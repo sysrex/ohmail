@@ -74,6 +74,27 @@
   </screenshots>
 
   <releases>
+    <release version="0.28.0" date="2026-10-22">
+      <description>
+        <ul>
+          <li>ohmail Desktop opens a PDF in the preview</li>
+          <li>A message you mark read goes to the top of Earlier</li>
+          <li>A message you read anywhere goes to the top of Earlier</li>
+          <li>The offer to file letters that arrived while nothing organized stands where you see it</li>
+          <li>Letters that arrived while nothing organized wait for your settings answer</li>
+          <li>The Screener opens faster on large mailboxes</li>
+          <li>The web app asks for new mail first when you come back</li>
+          <li>No automatic spam rule because other senders used the same subject</li>
+          <li>A changed search answers sooner in the desktop app</li>
+          <li>Operators: the pager reaches you when the database is down</li>
+          <li>Operators can drill the alerts and see who acknowledged them</li>
+          <li>A database outage no longer stops the worker or the self-hosted server</li>
+          <li>Cloud: an unchanged mailbox costs less to check</li>
+          <li>Cloud: checking several mailboxes costs less</li>
+          <li>Changes waiting for the next release are listed in changelog.d/</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.27.5" date="2026-10-20">
       <description>
         <ul>
@@ -125,20 +146,6 @@
           <li>The staff console can see more of how the service is used, and still none of anyone's mail</li>
           <li>Staff with only the operations role see mailbox addresses masked</li>
           <li>Staff can send an account's owner a link to the subscription page</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.27.1" date="2026-10-17">
-      <description>
-        <ul>
-          <li>The desktop window can no longer be navigated away from the app</li>
-          <li>Signing out of the web app no longer hangs, and ohmail.app no longer reloads in a loop afterwards</li>
-          <li>A picture or attachment opened while its message was being filed no longer shows blank</li>
-          <li>Signing up for ohmail Cloud keeps your place when connecting a mailbox</li>
-          <li>A new ohmail Cloud account that has not started its trial is offered the trial</li>
-          <li>Signing up from a plan on ohmail.app remembers the plan</li>
-          <li>German now says Mail, not Post</li>
-          <li>Mail keeps syncing after the database drops a connection mid-write</li>
         </ul>
       </description>
     </release>

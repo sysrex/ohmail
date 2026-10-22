@@ -21,6 +21,118 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.28.0] — 2026-10-22
+
+### ohmail Desktop opens a PDF in the preview
+
+On the desktop a PDF now opens in the in-app preview, as on the web, instead of being saved. Download, beside the
+file and in the preview, still saves it to your Downloads folder and leaves the preview as it is: a PDF stays on
+the page you were reading, and a file that could not be saved stays on screen while ohmail says so.
+
+### A message you mark read goes to the top of Earlier
+
+Mark read, or ⇧I, on the message you are reading now counts as reading it in ohmail, as opening it does.
+It keeps its place while it is open and goes to the top of Earlier when you move on, on every device. Mark
+all read and reading several selected messages keep arrival order. Web, desktop and phone.
+
+### A message you read anywhere goes to the top of Earlier
+
+A message you read in ohmail now goes to the top of Earlier on every path, not only when you open it.
+On the web and desktop, stopping two seconds on the message an action moved you to reads it, as moving
+there with j does, and Mark read in the reader over a tag, a sender or History counts too. On the
+phone, swiping one row read, or its Mark read action, counts. Mark all read and reading several
+selected messages keep arrival order.
+
+### The offer to file letters that arrived while nothing organized stands where you see it
+
+On the web and in the desktop app it now stands in the sidebar right under Resurface, together with the
+notices about who organizes your mailboxes. At the foot, folders or tags pushed it below the window's edge.
+Narrow windows keep it above the top bar.
+
+### Letters that arrived while nothing organized wait for your settings answer
+
+When an install starts organizing a mailbox another install organized before, its offer to file the letters that
+arrived while nothing organized it now waits until you have answered whether to import the other install's
+settings, instead of closing before you could answer. Rules imported from settings saved by this version keep the
+age they had where they were made, so the offer counts the letters they would have filed. Desktop, phone, Cloud and
+your own server.
+
+### The Screener opens faster on large mailboxes
+
+The Screener finds which held senders are still worth a decision from an index of each sender's mail by date,
+instead of reading every message they ever sent.
+
+### The web app asks for new mail first when you come back
+
+When you come back to a web tab, it asks for new mail first and its other reads a few at a time. A message,
+attachment or search you open in that moment is asked for ahead of them.
+
+### No automatic spam rule because other senders used the same subject
+
+When two first-time senders' mail shares a subject, such as two shops' "Your order has shipped", the Screener
+advises Spam for each of them. "Act on confident suggestions for me" then wrote a rule for each address that
+kept filing its later mail to Spam, even when your mail provider had confirmed the sender. It now files only the
+message that advice was about, writes no rule, and lists it under Filed automatically, where Put back returns it
+to the Screener; that sender's other and later mail waits for you. Advice ohmail stored before this change is
+treated the same way. Rules it already wrote this way stay, and keep filing that sender's mail to Spam until you
+change or revoke them under "Decided for you by ohmail" in Settings → Rules, on the desktop and the web. Spam
+advice about the sender's own message, such as a name claiming a company its address does not belong to, still
+writes the rule. Your own Screen out or Spam press is unchanged. This applies on the desktop, the phone and
+ohmail Cloud.
+
+### A changed search answers sooner in the desktop app
+
+A changed search no longer waits for the previous search's count to run first while mail is syncing.
+
+### Operators: the pager reaches you when the database is down
+
+Every alert pass starts by reading the database, so a database outage used to silence the pager, leaving only
+`alert_pass_failed` log lines. Now the API's alert pass pages `alert_db_unreadable` on its configured channels
+when it cannot use the database, without touching the database: a database that is stopped or unreachable, one
+that answers but refuses the pass's work (read-only, out of disk, memory or connections, shut down), and one too
+slow for the pass's reads to finish within 30 seconds. It pages again at most once an hour while it lasts (mail
+at most every 6 hours), and sends one resolved notice to the webhook and Telegram when it is back. On a
+self-hosted install this needs `TF_ALERT_SECRET` set beside the channels. The organizer stops with a stopped
+database, because its leader lock lives there, and pages only when its lock outlives the fault (a hung, read-only
+or full database, too many connections). New and optional, `TF_ALERT_HEARTBEAT_URL`: a ping URL from an outside
+check service, requested after every completed pass, so a dead box or database alarms there
+(`deploy/selfhost/.env.example` explains it).
+
+### Operators can drill the alerts and see who acknowledged them
+
+On ohmail Cloud and on your own server, `POST /internal/alerts/drill` with the `TF_ALERT_SECRET` bearer sends
+every kind of alert once, marked `[DRILL]`, through each alert channel that is set up: the server's channels at
+once, the worker's on its next alert pass. Every message carries one link. Opening it shows a page and records
+nothing; pressing the page's button records, once and within 24 hours, that the message reached a person.
+`GET /internal/alerts/drill` lists the last five drills with what each channel answered and which messages were
+acknowledged. One drill an hour. A drill is kept apart from real alerts: it opens, closes and changes none of
+them.
+
+### A database outage no longer stops the worker or the self-hosted server
+
+If the database closed a connection while ohmail was still opening it, the worker and the self-hosted server
+could stop (when the next attempt was refused, or the database said it was starting up or shutting down), or try
+again hundreds of times a second until the database was back. They now wait between attempts as for any other
+dropped connection, and when the database gives a reason for the close, the work waiting for that connection
+fails with it at once.
+
+### Cloud: an unchanged mailbox costs less to check
+
+When nothing has changed, each check the apps make for changes now costs the server two database statements
+instead of four: the two that record when a sync last finished run only when that record is due, once every five
+minutes.
+
+### Cloud: checking several mailboxes costs less
+
+Each open Cloud window checks your mailboxes every 30 seconds, and that check now costs the server the same few
+database queries whether you connected one mailbox or ten, instead of four more for each mailbox.
+
+### Changes waiting for the next release are listed in changelog.d/
+
+Each change now brings its own release note as a file in [changelog.d/](changelog.d/), and the release
+gathers them into this changelog. Contributors: add `changelog.d/<slug>.md` to your pull request instead of
+editing `CHANGELOG.md`; [changelog.d/README.md](changelog.d/README.md) has the format.
+
 ## [0.27.5] — 2026-10-20
 
 ### The first start is faster
@@ -12815,7 +12927,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.27.5...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.28.0...HEAD
+[0.28.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.28.0
 [0.27.5]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.5
 [0.27.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.4
 [0.27.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.3

@@ -21,6 +21,160 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.29.0] — 2026-10-23
+
+### Send leaves a resurfaced conversation where it was
+
+Send no longer marks a resurfaced conversation done, and no longer cancels a Resurface you set. The
+conversation stays where it was until you press Done or Send + Done. Answer Later still lets go once your reply
+has gone. This is on the desktop and the web; the phone already worked this way.
+
+### A meeting invitation shows its event once, at the top of the message
+
+A meeting invitation now shows its event card (what, when, where, who) right above the message on the
+desktop app, the web and the phone, instead of at the foot of the attachments, where a long Outlook or
+Teams invitation pushed it out of view. An invitation that carries the same event twice, as Google
+Calendar and Thunderbird send it, shows one card, not two. On the desktop app and the web an event
+embedded in the message is shown too, and the phone shows the card for the first time. The calendar
+files stay in the attachments. On the phone the card also appears once the connection
+comes back after a drop, and an invitation with a malformed duration can no longer stop a message
+from opening on any device. A title, place, name or time zone far longer than any real
+invitation's is cut short with an ellipsis, so a crafted invitation cannot stall the phone as the
+message opens.
+
+### The images for your own server, the Cloud mail worker and the desktop app's engine run Node.js 22.23.4
+
+Node.js 22.23.4 is the October 2026 security release of Node.js 22; among its fixes are an out-of-bounds
+write in its Brotli decoder and two flaws in matching a TLS certificate to its host name. The server, worker
+and web images are built on it, ohmail Cloud's mail worker runs the same worker image, and the desktop app
+carries it as its mail engine's runtime on macOS, Windows and Linux.
+
+### Later and Park on a conversation you answered file the letter, not your reply
+
+In the Ohbox, Later, Park and Resurface on a conversation whose newest message is your own reply now act on the letter you received, on the desktop, the web and the phone: the letter goes to the pile and your reply stays where it is. Before, they filed your reply and left the letter in the Ohbox, so the pile and Reply Run asked you to answer your own message. Such a conversation now opens at that letter, and its row shows the letter's tags.
+
+This also holds after you mark the conversation unread from its row (a swipe on the phone, or selecting it and marking the selection unread on the desktop and the web): Mark unread now marks the letter and leaves your reply read. Replies that were filed into a pile this way before stay there until you take them out.
+
+### Removing a mailbox keeps its unsent drafts
+
+On the desktop, removing a mailbox used to delete its unsent drafts without a word, although no mail server holds them. They now stay in Drafts on this computer, and the confirmation says how many. A kept draft can still be edited from a paired phone, and a reopened draft whose mailbox is gone, on the desktop or the phone, says which address it will send from instead. On the phone, removing its own mailbox names its unsent drafts and asks before deleting them.
+
+### Setup's counts agree with the Screener, and count the mailbox you are setting up
+
+At the end of setup, "What ohmail did" and the Screener now use the history window you just chose. Before, an open
+window could go on using the window it had read before you pressed Agree, so a sender you had not heard from in
+months could be counted under History while the Screener listed them as waiting, or the other way round. When you
+add a mailbox to an install that already has one, the first decision now says how many senders who wrote to this
+mailbox are waiting, as the step before it does, and names the total across your mailboxes in its second sentence.
+This applies on the desktop, the web, ohmail Cloud and your own server.
+
+### Mail at providers other than Gmail and Microsoft can be confirmed by its sender's own signature
+
+At a mailbox whose provider ohmail does not read a verdict from (every provider but Gmail and Microsoft),
+ohmail now checks the DKIM signature the sender's own domain put on the message, for mail arriving from now
+on: a letter from a company's own address, and a one-click newsletter while a screen-out may unsubscribe.
+Where the signature holds, the sender counts as confirmed: the one-click unsubscribe a screen-out sends, and
+acting on a confident suggestion for a company's own address, now happen there too, and the "Your mail
+provider did not confirm that." line no longer shows on such a letter. A signature that is missing or does
+not hold changes nothing; it never counts against a sender. The check looks up the signing key in DNS
+through your system's resolver, and a sender whose name server does not answer holds up new mail by a
+few seconds at most. This applies on the desktop, ohmail Cloud and your own server; a phone organizing
+its own mail does not check signatures.
+
+On the desktop the one-click unsubscribe a screen-out sends goes out from your own computer, so the list
+sees the computer's network address; a screen-out made in a browser paired with the desktop app is sent
+from that computer too. The note under the Settings switch and the fine print of the screen-out confirm
+said it went from ohmail's servers, which is true on ohmail Cloud only; on the desktop, and in a browser
+paired with it, they now say it goes from your computer, in English and German.
+
+### The phone's Connect says when it cannot trust your mail server's certificate
+
+On the phone, Connect now opens a mailbox only after it has signed in to your incoming server. If the
+phone refuses the server's certificate, Connect says so in the desktop's words (not issued by a trusted
+authority, expired, not valid yet, or for another host) and sends no password; if it cannot reach the
+server, it says that. Either way nothing is saved. Before, Connect went on to an Ohbox that only said
+"Connection lost. Reconnecting…". A mailbox that is already connected now names a refused certificate in
+the Ohbox and in Settings instead of reconnecting for ever.
+
+### Links in the desktop app open only on your own click
+
+On the desktop app for Windows, macOS and Linux, a link opens in your browser only when you click it or press Enter on it, and only if it is a link the app shows you. Nothing running inside the app's window can open one without an action of yours. Opening your subscription or account page now takes two presses: the first prepares the page, the second, on Open in your browser, opens it.
+
+### Letters from new senders that arrived while nothing organized a mailbox go to the Screener when you file them
+
+When a device starts organizing a mailbox again, the offer for the letters that arrived in the gap now also counts the ones from senders you have not decided about, and names both numbers. Pressing File files the first by your rules and puts the others in the Screener, where their senders wait for your answer; Leave moves nothing. Before, those letters stayed in the Ohbox and the Screener never asked about them. This applies on the desktop, the web, the phone, ohmail Cloud and your own server.
+
+### Letters that arrived after a hand-back are offered on the install that organizes next
+
+When you hand a mailbox back on one install and organize it from another (desktop, phone, ohmail Cloud or your own
+server), the offer to file the letters that arrived in between counts from the moment you pressed hand back, not
+from when the other install first looked. Quitting the app, or the phone app leaving the screen, now leaves the
+moment it let go in the same way; if an install stopped without letting go (it crashed, or a laptop lid closed),
+the count starts at its last sign of life. So a phone or computer that was asleep while another install organized
+no longer counts letters from that install's turn. ohmail Cloud now also saves your latest settings into the mailbox
+before it lets go, and quitting the app saves them too, as handing back already did. The moment travels in the
+mailbox's settings message, so the install that lets go needs this version; with an older one the count starts as
+it did before. Nothing moves until you press File.
+
+### Closing the desktop app on a slow mail server no longer leaves the mail store to be recovered
+
+On a mail server slow to answer, closing the desktop app could take longer than the five seconds the app
+waits for its engine, so the engine was stopped before its local mail store had closed, and the next start
+had to recover the store. The store now closes first and the goodbyes to the mail server run beside it,
+so an ordinary close finishes inside those five seconds. An organizing install that is closed in the
+middle of a sync still hands the mailbox back, so your other install can take over at once.
+
+A message you send just before closing still goes out. If it has gone within the first two seconds of the
+close it is recorded as sent at once; if not, the app checks your Sent folder for it as soon as it starts
+again, as it now does for any message a crash left reading "Sending…", instead of waiting ten minutes.
+
+A mailbox you remove just before closing no longer keeps its mail on this computer: the removal clears the
+mail first, and one that a close, a crash or an older version left unfinished is finished when the app
+next starts. Removing such a mailbox again now clears its mail too.
+
+### A second engine can no longer open the same mail store on macOS and Windows
+
+On macOS and Windows the desktop app's engine now holds its local mail store with an operating-system
+lock for as long as it runs, so a second engine started on the same store is refused instead of
+opening it beside the first and corrupting it. A store left behind by a crash or a power cut opens
+again by itself.
+
+### New mail arrives at once again after a delete on Dovecot and other QRESYNC servers
+
+On Dovecot servers and providers built on them, such as Infomaniak, deleting or filing a message from the inbox, in ohmail or in another app, left ohmail counting one message too many, so the next new message waited 15 seconds to 2 minutes for the next check. It now arrives within a second, on the desktop, the phone and ohmail Cloud. On the desktop and the phone, a message arriving in the 15 seconds after the connection check ohmail makes every 30 seconds also waited; it now arrives at once too.
+
+### A mailbox keeps syncing when the server sends more for its mail than it stated
+
+When a mail server sends more for a batch of messages than their stated sizes allow, ohmail keeps the mail that arrived and syncs the rest over a new connection, on the desktop, the phone, Cloud and your own server. That holds in INBOX, in Sent and in your own folders, including a folder read for the first time and one the server has renumbered. Before, the mailbox stopped syncing until the server changed, and the desktop app said it could not reach the server. A message still too large on its own is set aside as before.
+
+### A rule change no longer waits on a mailbox you removed
+
+When you change or remove a rule on a device that does not organize your mail, the Rules page shows the change once every computer still organizing your mailboxes has made it. It used to keep showing the old rule until you made the change again if you removed or switched off one of those mailboxes before its computer answered, or if that computer's answer reached this device only after this device had stopped waiting for it. One case still needs the change made again: if you changed the same rule a second time and the second change showed first, the first one is not added afterwards. On the desktop, the phone and ohmail Cloud.
+
+### Cloud: checking mailboxes costs less again
+
+Each open window checks your mailboxes every 30 seconds. To report the moves your mail server has not made yet,
+that check read every message of each mailbox; it now reads only those moves, so a large mailbox costs what a small
+one does. The desktop and phone apps answer faster too.
+
+### Building and testing from a fresh clone is checked every week on Linux, macOS and Windows
+
+A scheduled workflow clones the repository on clean runners per platform and runs the build in the
+[README](README.md) and the install and test commands in [CONTRIBUTING.md](CONTRIBUTING.md), word for word,
+with no credentials; a test keeps the documents and the workflow equal. For contributors three things change:
+the documented install is now `npm ci --ignore-scripts`, as in CI; the documented suite can run in parts
+(`PART=2 PARTS=4` runs the second of four), one machine each; and every text file now checks out with LF line
+endings on Windows too, which is what most of the suite's file-reading tests expect.
+
+### Without the test services, the suite skips what needs them instead of failing
+
+For contributors: `npm test` on a machine without the test services in `docker-compose.yml` no longer fails
+about 535 files. Each run checks once whether Postgres, GreenMail, Dovecot and RustFS answer, prints a line
+for each one that does not, and skips the files that need a missing one, naming the service and its address.
+A service that answers but is broken still fails, and `TF_REQUIRE_PG`, `TF_REQUIRE_GREENMAIL`,
+`TF_REQUIRE_DOVECOT` and `TF_REQUIRE_RUSTFS` set to `1` turn a missing one into a failure, as CI does.
+[CONTRIBUTING.md](CONTRIBUTING.md) says how to run the suite either way.
+
 ## [0.28.0] — 2026-10-22
 
 ### ohmail Desktop opens a PDF in the preview
@@ -12927,7 +13081,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.28.0...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.29.0...HEAD
+[0.29.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.29.0
 [0.28.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.28.0
 [0.27.5]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.5
 [0.27.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.4

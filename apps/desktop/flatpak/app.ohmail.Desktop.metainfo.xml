@@ -78,6 +78,15 @@
   </screenshots>
 
   <releases>
+    <release version="0.30.0" date="2026-10-23">
+      <description>
+        <ul>
+          <li>A conversation opened from the Ohbox shows which messages are new, and reads them as you see them</li>
+          <li>A message whose formatting was removed can be sent again</li>
+          <li>The desktop's opening line stays inside the sidebar</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.29.0" date="2026-10-23">
       <description>
         <ul>
@@ -151,19 +160,6 @@
           <li>No automatic screen-out or spam rule from an unconfirmed message</li>
           <li>Forwarding right after opening a message</li>
           <li>Signing out cancels sign-ins still waiting</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.27.3" date="2026-10-19">
-      <description>
-        <ul>
-          <li>Narrower link opening on the desktop</li>
-          <li>Unconfirmed mail from a company's own address</li>
-          <li>Confident suggestions acted on per sender</li>
-          <li>A self-hosted server pages you when the organizer stops</li>
-          <li>Coming back to ohmail.app after signing out no longer shows an empty page</li>
-          <li>Change your password</li>
-          <li>Back stops the account deletion</li>
         </ul>
       </description>
     </release>

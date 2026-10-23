@@ -21,6 +21,24 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.0] — 2026-10-23
+
+### A conversation opened from the Ohbox shows which messages are new, and reads them as you see them
+
+When you open a conversation from the Ohbox, every message in it that is still unread sits on a softly tinted panel with an accent edge, and a column of squares beside the messages shows the whole conversation at a glance, one square per message, oldest at the top: solid for unread, dimmed for read, hollow for your own. The square of the message most in view is ringed, and pressing a square brings that message to the top. The list row shows the same squares under its preview.
+
+A message now counts as read once you have seen its top: its sender line and its first few lines (the top of a designed message) have been on screen together for a moment, about 0.7 seconds, in a conversation you opened. You do not have to scroll to its end. Its tint and square then settle slowly. A message you only scroll past quickly, or that never comes on screen, stays unread, and so does one whose top you leave within the moment. Before, opening a conversation marked only one message read, and the others turned read unpredictably as you scrolled. Mark as read still reads the whole conversation at once, and each message's ⋯ menu now has Mark unread beside Reply and Forward; a message you mark unread stays unread until you leave the conversation. A message on its own follows the same rule, without the squares, and opens at its top rather than where the conversation before it was scrolled.
+
+Three things behave differently. Moving through the list with j and k only previews: nothing is marked read however long the cursor rests, and opening the message (↵, a click or scrolling in it) is what reads it. Nothing is read while the window is in the background, unless you are scrolling it; a reply that arrives while the conversation is open is read the same way, once its top has been on screen for the moment. On the phone, opening a message from the Ohbox no longer marks it read by itself: it is read by the same rule, the conversation reads oldest first with the newest at the bottom, in the order of its squares, and the reader shows the same tint and squares there, with Mark unread in each message's ⋯. This applies to the web, the desktop and the phone.
+
+### A message whose formatting was removed can be sent again
+
+On the web, the desktop and ohmail Cloud, a message or reply that once held formatting and was then cleared could not be saved or sent; it now saves and sends as plain text, also when it was cleared while offline. A formatted draft reopened from Drafts now opens with its formatting and is sent with it, and Compose's note says when a draft could not be saved.
+
+### The desktop's opening line stays inside the sidebar
+
+On the desktop, the "Opening your mailbox" line shown at the foot of the sidebar while the app starts no longer reaches past the sidebar into the message list for the first moment of a launch, with a narrow sidebar, a smaller window or the Zero layout.
+
 ## [0.29.0] — 2026-10-23
 
 ### Send leaves a resurfaced conversation where it was
@@ -13081,7 +13099,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.29.0...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.0...HEAD
+[0.30.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.0
 [0.29.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.29.0
 [0.28.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.28.0
 [0.27.5]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.27.5

@@ -78,6 +78,28 @@
   </screenshots>
 
   <releases>
+    <release version="0.30.2" date="2026-10-24">
+      <description>
+        <ul>
+          <li>A letter filed from the sender sheet stays filed</li>
+          <li>Quoted history folds in every message of a thread</li>
+          <li>The squares beside a conversation stay still while it scrolls</li>
+          <li>Send closes the message at once and finishes in the sidebar</li>
+          <li>News and Receipts open at once</li>
+          <li>Waiting filings are named, explained and can be retried or left where they are</li>
+          <li>Letters left in the old News folder reach News</li>
+          <li>A sender's other letters stay where you left them when a later rule applies to past mail</li>
+          <li>A dead connection no longer freezes sync or your changes until a reload</li>
+          <li>Phone: a message sent without network still goes after you close the composer</li>
+          <li>Restoring a letter before its delete reached the server brings it back</li>
+          <li>A phone or computer on a bad network keeps organizing its own mailbox</li>
+          <li>The phone keeps your place in a conversation through a rotation, a fold or a display size change</li>
+          <li>Opening a message no longer keeps the previous mailbox screens in memory</li>
+          <li>Park and Later open the next message, and Search's filters work from the keyboard</li>
+          <li>A Google or Thunderbird invitation lists invite.ics once</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.30.1" date="2026-10-24">
       <description>
         <ul>
@@ -143,20 +165,6 @@
           <li>Cloud: an unchanged mailbox costs less to check</li>
           <li>Cloud: checking several mailboxes costs less</li>
           <li>Changes waiting for the next release are listed in changelog.d/</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.27.5" date="2026-10-20">
-      <description>
-        <ul>
-          <li>The first start is faster</li>
-          <li>A send that failed before reaching your mail server is retried for you</li>
-          <li>Letters an empty message stood in for are imported</li>
-          <li>The Ohbox says when mail was last checked and where it went</li>
-          <li>A meeting invitation that arrives as an Outlook link says so</li>
-          <li>The Junk segment also lists the spam ohmail keeps itself</li>
-          <li>Signing out also ends a sign-in being issued</li>
-          <li>The pager reads the billing program's own failures</li>
         </ul>
       </description>
     </release>

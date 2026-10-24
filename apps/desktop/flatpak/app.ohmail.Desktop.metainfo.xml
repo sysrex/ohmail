@@ -78,6 +78,13 @@
   </screenshots>
 
   <releases>
+    <release version="0.30.3" date="2026-10-24">
+      <description>
+        <ul>
+          <li>News and Receipts open again on the web and the desktop</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.30.2" date="2026-10-24">
       <description>
         <ul>
@@ -144,27 +151,6 @@
           <li>Cloud: checking mailboxes costs less again</li>
           <li>Building and testing from a fresh clone is checked every week on Linux, macOS and Windows</li>
           <li>Without the test services, the suite skips what needs them instead of failing</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.28.0" date="2026-10-22">
-      <description>
-        <ul>
-          <li>ohmail Desktop opens a PDF in the preview</li>
-          <li>A message you mark read goes to the top of Earlier</li>
-          <li>A message you read anywhere goes to the top of Earlier</li>
-          <li>The offer to file letters that arrived while nothing organized stands where you see it</li>
-          <li>Letters that arrived while nothing organized wait for your settings answer</li>
-          <li>The Screener opens faster on large mailboxes</li>
-          <li>The web app asks for new mail first when you come back</li>
-          <li>No automatic spam rule because other senders used the same subject</li>
-          <li>A changed search answers sooner in the desktop app</li>
-          <li>Operators: the pager reaches you when the database is down</li>
-          <li>Operators can drill the alerts and see who acknowledged them</li>
-          <li>A database outage no longer stops the worker or the self-hosted server</li>
-          <li>Cloud: an unchanged mailbox costs less to check</li>
-          <li>Cloud: checking several mailboxes costs less</li>
-          <li>Changes waiting for the next release are listed in changelog.d/</li>
         </ul>
       </description>
     </release>

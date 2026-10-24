@@ -21,6 +21,49 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.1] — 2026-10-24
+
+### A letter filed into the folder it is already in is no longer deleted from your mail server
+
+Filing a letter into the folder it was already in made ohmail take the letter for its own copy at the destination and delete it from your mail server. It happened when one side of a filing named the News folder by its name before 0.22, ohmail/Reads, and the other by ohmail/News, which are one folder on the server, and when a filing named one folder twice. ohmail now records such a filing as done and sends the mail server nothing. This holds on ohmail Cloud, on your own server, in the desktop app and in the phone app.
+
+### A conversation always opens on its newest message, pressing a verb no longer reads the message you are only previewing, and the phone's squares hit what you press
+
+On the desktop, the web and the phone, a conversation always opens on its newest message, also when you open it again; older messages you have not seen stay unread, their squares solid, until their top has been on screen for a moment.
+
+On the web and the desktop, a press on the action bar, a message's ⋯ or the reply box while you move through the list with j and k no longer counts as opening the conversation, so choosing Later, Resurface or Move there leaves the previewed message unread. A press or a scroll on the messages themselves still opens it. On the phone, a press on a square in a long conversation now lands on that square rather than its neighbour, and on two panes (an unfolded foldable, an iPad) a reply that arrives while Search, Settings or another tab stands over the reader stays unread until you see it.
+
+### A send that did not go out says so, and a letter past the size limit is never lost unsaid
+
+On the desktop and the web, a reply or message that ends "Not sent" after you moved on, for example because your mail server could not be reached, now says so in a notice with an Open button that brings the message back with your words and Send ready, also in a narrow window. Its row in Drafts says it was not sent until you open it, and several that were not sent are named together. A send ohmail could not confirm, or one your server refused as a copy of a message already sent, keeps its own sentence and is never counted as not sent. Nothing is sent again without you pressing Send. A message past the 262 KB text limit is no longer answered "your draft is kept. Try again": the composer and the reply editor name the limit and send nothing until the text is shorter, also when your signature is what takes it over, and so does the Reply Run; the reply editor names it while you type.
+
+A reply or message sent while offline from ohmail Cloud goes once when the connection is back, and no longer also stays in Drafts on the web and on a paired desktop, where it could be sent a second time. In the Reply Run, a reply that went says "Reply sent." instead of "Sending didn't work".
+
+On the phone, the composer names the 256 KB limit while you type, and Send and Cancel say why nothing was sent or kept instead of "Try again" or no reason at all. A draft opened from Drafts and written past the limit says so when you close it, and Drafts keeps the earlier version.
+
+### Connecting Gmail says you need an App Password, and why Google refused
+
+Gmail signs in only with an App Password, and the connect forms now say so before you press anything, with
+links to turn on 2-Step Verification and to create the App Password, on the web, on your own server, on the
+desktop and on the phone (which said nothing about it before). When Google refuses the sign-in, ohmail now
+says why in Google's terms instead of "the mail server refused the password": your Google password was used
+where an App Password is needed, Google wants the sign-in confirmed in a browser first, or IMAP is turned off
+for the account. Accounts that cannot create App Passwords (some work, school and Advanced Protection
+accounts) are told that ohmail cannot connect them yet. An App Password pasted with its spaces now works, and
+a Gmail mailbox whose password stops working says that a changed Google password ends every App Password.
+
+### Preview shows the top of a tall PDF page
+
+On the desktop and the web, a PDF page, picture or text taller than the Preview window now starts at its top and scrolls to its end. Before, its top was cut off out of scroll reach, so an invoice whose text sits near the top of the page previewed blank. A preview that fits stays centred.
+
+### Operators: an old encryption key version can be retired
+
+Once `run-kek-rewrap` reads no stored secret below the newest key version, its last lines name the exact change that retires the older versions, and the API and the worker then start without them (removing the first version used to stop both from starting). While a stored secret still names a retired version, the worker refuses to start, and the API keeps serving and answers 503 on `/health`; the self-host compose file does not pass the retirement setting on yet.
+
+### Contributors: the Mac build no longer runs beside the signing identity
+
+The macOS build job holds no Apple secret. Signing, notarizing and stapling the app and its disk image move to a separate job that runs no checkout, npm or cargo and takes the build by the ID its upload returned, so no other job of the run can swap what it signs. It signs only once the Apple signing secrets are set up, and they are not yet: the Mac app is still not Developer ID signed or notarized, and the Mac downloads stay the build's own ad-hoc app, byte for byte.
+
 ## [0.30.0] — 2026-10-23
 
 ### A conversation opened from the Ohbox shows which messages are new, and reads them as you see them
@@ -13099,7 +13142,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.0...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.1...HEAD
+[0.30.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.1
 [0.30.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.0
 [0.29.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.29.0
 [0.28.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.28.0

@@ -21,6 +21,143 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.2] — 2026-10-24
+
+### A letter filed from the sender sheet stays filed
+
+Filing a letter you are reading to Receipts, News or any other place from its sender's sheet now moves that
+letter at once, and it no longer jumps back into the Ohbox a few seconds later. This holds with "apply to
+mail already here" on or off, for one address or the whole domain, on the web, the desktop and the phone.
+When another letter from that sender is still waiting in the Screener, the letter moves as soon as that
+decision is sent. For one address, Undo still takes back the move and the rule together; a press for the
+whole domain has no Undo, as before. The sheet says before the press that the letter moves now. The sender's
+other letters stay shown where the rule sends them while ohmail files them, and a rule ohmail learned is no
+longer switched off by the press that retargets it, or by that press's Undo.
+
+The next letter from that sender lands where your rule says, sign-in notices and codes included: a rule you
+made yourself, a Screener decision included, now outranks the "keep sensitive mail in the Ohbox" default.
+Rules ohmail inferred still keep such mail in the Ohbox.
+
+### Quoted history folds in every message of a thread
+
+Each message in a thread and the opened message now fold the earlier history they quote behind one "Show history" toggle, on desktop, web and the phone. This covers Outlook, Exchange, Yahoo, Lotus, Samsung, Zimbra, GMX, WEB.DE and mail.com histories that sit unquoted under a From/Von/De header block, Gmail and Thunderbird forwards, Apple Mail replies, mail laid out as HTML only, and long bodies. Answers written between the quoted lines (announced, coloured, highlighted or prefixed), comments under a pasted message, a body that is only a forward, and a signature, list footer or disclaimer below the quote stay visible, also where a message shows its text part. A folded history loads no pictures until it is opened.
+
+### The squares beside a conversation stay still while it scrolls
+
+On desktop (Linux), the column of squares beside a conversation in the Ohbox could flicker and jump for a
+frame while the conversation scrolled, most often while messages were turning read. The column now stands
+beside the reading column instead of inside it, so scrolling never moves it. A wheel over the squares still
+scrolls the conversation.
+
+### Send closes the message at once and finishes in the sidebar
+
+On the desktop and the web, pressing Send no longer keeps the message open until your mail server has taken it, which could take several seconds. When the connection is fine, the message or reply closes as soon as it is safely queued, and the bottom of the sidebar says "Sending to …" and then "Sent to …". If it cannot be sent, the sidebar says why and which message it was, by whom it was for and its subject, with an Open button that brings it back. It stays there while you send other messages, which show beside it. Every way back to such a message, the Open button, replying to it again or its row in Drafts, brings back its words, recipients, sender and attachments, as long as ohmail has not been restarted in between. On a narrow window, a reply sent from an open message says how it went in a notice, since the message covers the sidebar. When ohmail cannot reach your mail server, the message stays open and says why, as before.
+
+You can open the next draft while a message is still sending. It can be edited and sent once the first one has gone, and says so. Opening another draft in the moment a send finished could delete that draft; it no longer does.
+
+A message you sent just before closing ohmail while your mail server was slow to answer could stay in Drafts with "We're checking your Sent folder" for good, and never go out. A send that had not reached your mail server yet now goes when ohmail starts again, once. On ohmail Cloud and your own server, such a send is back in Drafts after ten minutes instead of being reported as unconfirmed, unless it carried large attachments.
+
+A message that was not sent now keeps saying so in Drafts until it is sent or discarded, not only until you open it.
+
+### News and Receipts open at once
+
+On the web, the desktop and ohmail Cloud, pressing 2 or 3, or clicking News or Receipts, no longer takes about a second over a large mailbox. The list shows in the frame after the press and the stream follows behind it. Going back to News or Receipts after visiting the Ohbox or the other one no longer builds the view again: it is kept while you move among the three, with its messages already drawn, and still opens at the top. A stream now starts with one screen of messages and draws a message's own design only once it comes near the screen.
+
+### Waiting filings are named, explained and can be retried or left where they are
+
+When messages you filed have not reached the folder on your mail server yet, the sidebar now names the mailbox (or how many mailboxes) and the reason on record, and no longer says "your mail server refused it" when the last attempt only failed to go through. Long waits read in hours. Its link opens Settings → Mailboxes at that mailbox, where ohmail Cloud on the web shows how many messages wait, since when, for which folder, why and where they are now, with two buttons: Try again now, which ohmail retries on its next pass, and Leave them where they are, which keeps the messages in the folder they are in. A message you deleted is never left that way. Check this mailbox also says how many messages are still waiting to be filed.
+
+A message filed somewhere new now starts with a fresh retry schedule instead of inheriting the wait and reason of an earlier failed move.
+
+### Letters left in the old News folder reach News
+
+A mailbox that still had an `ohmail/Reads` folder beside News after the rename to News kept the letters in it out of every view, History and Search. The organizing install now moves them into News on its next pass, not only when it connects, on Cloud, your own server, the desktop and the phone. "Check this mailbox" no longer reports a gap for the old folder's name once the rename is done, and while letters are still there it says they are in News' folder before the rename, not yet moved.
+
+On a mail server without the IMAP MOVE command, a folder sweep the server refuses, for example on a full mailbox, no longer deletes the letters it could not copy.
+
+Older News letters whose mail server renumbered the News folder could no longer be filed, deleted or marked read on the server, and nothing said so. They are found again under the new numbering and file on the next pass. A letter the mail server no longer holds stays in ohmail with its text, marked as missing on the server, instead of disappearing.
+
+A filing that waits now gives its real reason. A dropped connection no longer reads as "your mail server refused it", a move the server refused is recorded instead of being sent again every pass, and a move ohmail could not confirm says so.
+
+### A sender's other letters stay where you left them when a later rule applies to past mail
+
+Filing a letter from the reader into News or Receipts makes a rule for that sender and leaves their other
+mail where it is. A later rule about the same sender with a subject or body term, applied to mail already
+here, filed those other letters too, by the first rule, over the following minutes. Applying a rule to
+past mail now carries out only that rule, and once its walk is finished it is not walked again every few
+minutes on an account with a mailbox another install organizes (Cloud and your own server). Moving a
+sender's rule elsewhere with past mail left in place also ends that rule's unfinished walk, so connecting or
+removing a mailbox later no longer files the rest of their mail by the changed rule.
+
+### A dead connection no longer freezes sync or your changes until a reload
+
+After sleep or a network change, a request sent over a connection that had silently died could wait for ever: sync stopped ("Can't refresh. Retrying." or a mailbox that never moved), changes said they were done but none went out, and Try again did nothing until the page was reloaded. Now a sync request ends after 30 seconds without an answer and is asked again, a change waits at most 75 seconds on a request that never answers before it is sent again under the same key (Try again sends it sooner, once the request is a minute old), and a session renewal that never answers ends after 75 seconds without signing you out. The request a change stops waiting for is cancelled, so it can no longer land after a newer change or after you discarded it. A message being sent is never cut off: on a slow connection its attachments can take longer than that to upload, so it keeps its one request, and the changes made after it stop waiting for it. On the web and ohmail Cloud.
+
+The Unsaved changes panel now lists every change that has not gone through yet, such as a Screener decision, each with its own reason instead of always "could not reach your account". A Screener decision ohmail gave up on returns to Waiting marked "Not saved" instead of looking undecided.
+
+### Phone: a message sent without network still goes after you close the composer
+
+On the phone, a message sent without network said it would go once the network was back, but closing the
+composer (Back, a tap outside it, or Cancel) quietly cancelled it, and it never went. Closing the composer
+now leaves the send waiting: it goes once when the network returns, also after the app was closed and
+opened again, and the composer repeats that as it closes. A new reply or forward of the same message with
+other words, other files or a later time is sent as a message of its own and does not replace the waiting
+one. While a send waits, the composer offers Cancel send instead of Cancel, and that is the only way to
+cancel it. It says the send was cancelled only when it was, and where the words were kept, that the
+message is in Drafts. When Cancel send cannot reach the server, closing the composer keeps the words in
+Drafts.
+
+On a phone that runs its own mail engine, Discard in Drafts failed with "request body must be
+application/json" and the draft stayed. The same error hit deleting a message, a rule, a tag or a folder,
+cancelling a scheduled send, and downloading all of a message's attachments. They all work now. A new mail
+that waited for the network now says "Sent." when it goes, not "Reply sent.".
+
+### Restoring a letter before its delete reached the server brings it back
+
+Deleting a letter and pressing Restore in Trash before the mail server had moved it (an offline
+or slow organizer) could leave it in no view at all, while the server still held it in its folder,
+and a second Restore was refused. Restore now cancels a delete that has not reached the server:
+the letter is back in its folder at once and nothing is sent. A delete that already reached the
+server restores as before. On the web app, Cloud and the desktop app.
+
+### A phone or computer on a bad network keeps organizing its own mailbox
+
+After a few minutes of a bad connection, ohmail on a phone or computer could stop organizing its own mailbox and say another phone organized it. It now always recognises a claim it wrote, and takes back one it can no longer prove once that claim lapses, with no press.
+
+### The phone keeps your place in a conversation through a rotation, a fold or a display size change
+
+On the phone app, rotating, folding to the outer screen or changing the display size kept the old scroll
+offset, so the open conversation showed another message, and a landing on an unread message's top could mark
+it read. The reader now keeps the message you were reading and how far into it you were, lands there again
+once the new layout is in, and marks nothing read while it is on its way. A search now opens at the top of its
+results, with the count and the newest matches in view. On a foldable's inner screen, Back closes the open
+message first, and a message opened from Search returns to the search and its query.
+
+### Opening a message no longer keeps the previous mailbox screens in memory
+
+On the web and the desktop, every message opened and closed kept the whole previous state of the mailbox
+screen in memory, each one linked to the next. The list of keyboard shortcuts the screen reads for its key
+hints held that link; it now holds only the keys and their labels, and a message you have left takes nothing
+with it. This covers opening and closing messages only: growth while searching is a separate matter and is
+not changed here.
+
+### Park and Later open the next message, and Search's filters work from the keyboard
+
+With "After acting on a message: Next message" (the default), Park and Later on the open message now
+open the next one, as Trash and the other verbs already did; the reader no longer rests on "Nothing open."
+(desktop and web).
+
+Enter on a reply's "Change recipients" opens To, Cc and Bcc with the cursor in To. Focus used to fall to
+the message list, so the next letters typed ran list verbs such as Later or Park.
+
+Search's From, Folder and "Has attachment" filters are buttons: Tab reaches them, Enter or Space turns one on,
+and the one in force is marked and turns off on a second press. `from:` and `in:` typed into the search
+field are searched as words, and the field now says so and points at the filters.
+
+### A Google or Thunderbird invitation lists invite.ics once
+
+On the desktop app, the web and the phone, an invitation's attachments no longer show its own calendar text as a second invite.ics that would not open (the event card and the invite.ics file already carry it). An Outlook invitation, whose calendar text is its only copy, keeps its one invite.ics to open or save, and a calendar file someone attached stays and opens.
+
 ## [0.30.1] — 2026-10-24
 
 ### A letter filed into the folder it is already in is no longer deleted from your mail server
@@ -13142,7 +13279,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.1...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.2...HEAD
+[0.30.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.2
 [0.30.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.1
 [0.30.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.0
 [0.29.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.29.0

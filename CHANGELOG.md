@@ -21,6 +21,15 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.3] — 2026-10-24
+
+### News and Receipts open again on the web and the desktop
+
+In 0.30.2 a press of News or Receipts on the web showed "This view didn't load" instead of the list, and the
+Ohbox showed the same card until the page was reloaded. The change that kept both lists ready between visits
+used a part of React that the web app's build does not have. News and Receipts now open as they did before on
+the web, and on the desktop they stay ready between visits as 0.30.2 intended.
+
 ## [0.30.2] — 2026-10-24
 
 ### A letter filed from the sender sheet stays filed
@@ -13279,7 +13288,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.2...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.3...HEAD
+[0.30.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.3
 [0.30.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.2
 [0.30.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.1
 [0.30.0]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.0

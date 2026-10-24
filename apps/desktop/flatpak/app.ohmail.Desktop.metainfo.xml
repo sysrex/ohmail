@@ -78,6 +78,19 @@
   </screenshots>
 
   <releases>
+    <release version="0.30.1" date="2026-10-24">
+      <description>
+        <ul>
+          <li>A letter filed into the folder it is already in is no longer deleted from your mail server</li>
+          <li>A conversation always opens on its newest message, pressing a verb no longer reads the message you are only previewing, and the phone's squares hit what you press</li>
+          <li>A send that did not go out says so, and a letter past the size limit is never lost unsaid</li>
+          <li>Connecting Gmail says you need an App Password, and why Google refused</li>
+          <li>Preview shows the top of a tall PDF page</li>
+          <li>Operators: an old encryption key version can be retired</li>
+          <li>Contributors: the Mac build no longer runs beside the signing identity</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.30.0" date="2026-10-23">
       <description>
         <ul>
@@ -144,22 +157,6 @@
           <li>The Junk segment also lists the spam ohmail keeps itself</li>
           <li>Signing out also ends a sign-in being issued</li>
           <li>The pager reads the billing program's own failures</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.27.4" date="2026-10-19">
-      <description>
-        <ul>
-          <li>A letter you read elsewhere during an import is now imported</li>
-          <li>Fewer background refreshes</li>
-          <li>The address view finds mail sent to someone in your whole mailbox</li>
-          <li>A slow mail server no longer holds up the other mailboxes</li>
-          <li>The first decision waits for the Screener</li>
-          <li>The pager reports its own failures</li>
-          <li>Staff with only the operations role see no mailbox sender name</li>
-          <li>No automatic screen-out or spam rule from an unconfirmed message</li>
-          <li>Forwarding right after opening a message</li>
-          <li>Signing out cancels sign-ins still waiting</li>
         </ul>
       </description>
     </release>

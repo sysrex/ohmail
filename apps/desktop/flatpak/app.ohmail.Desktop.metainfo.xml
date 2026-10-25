@@ -78,6 +78,29 @@
   </screenshots>
 
   <releases>
+    <release version="0.30.5" date="2026-10-25">
+      <description>
+        <ul>
+          <li>Every conversation's row has rounded squares in the paper look</li>
+          <li>The open conversation's row shows one strip of squares and one box</li>
+          <li>Search finds a letter when your words sit in different parts of it</li>
+          <li>A message sent from another device no longer comes back in Compose</li>
+          <li>A draft saved while offline belongs to its message when it reaches your account</li>
+          <li>ohmail Cloud says when storage is nearly full, and what adds room on your plan</li>
+          <li>Connecting a mailbox starts with your address</li>
+          <li>A forward shows the message it forwards, and folds only the thread below it</li>
+          <li>Send again looks in Sent first and sends the same message, with its files</li>
+          <li>Shortcut keys do what the sheet says, and "Tomorrow" after midnight means this morning</li>
+          <li>A letter held at the gate is dated by when it arrived</li>
+          <li>Changing where a rule files mail moves only the mail it filed</li>
+          <li>Every press that needs a fresh second factor asks for it in place</li>
+          <li>The desktop app asks about an update in its own window</li>
+          <li>The desktop columns keep an even frame on Omarchy</li>
+          <li>Cloud erases a closed account only after its erasure warning was delivered</li>
+          <li>Cloud can remind a new trial once to connect its mailbox</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.30.4" date="2026-10-25">
       <description>
         <ul>
@@ -163,15 +186,6 @@
           <li>Preview shows the top of a tall PDF page</li>
           <li>Operators: an old encryption key version can be retired</li>
           <li>Contributors: the Mac build no longer runs beside the signing identity</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.30.0" date="2026-10-23">
-      <description>
-        <ul>
-          <li>A conversation opened from the Ohbox shows which messages are new, and reads them as you see them</li>
-          <li>A message whose formatting was removed can be sent again</li>
-          <li>The desktop's opening line stays inside the sidebar</li>
         </ul>
       </description>
     </release>

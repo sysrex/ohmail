@@ -21,6 +21,200 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.5] — 2026-10-25
+
+### Every conversation's row has rounded squares in the paper look
+
+On desktop, web and the phone, the small squares under each conversation's preview in the list now have
+softly rounded corners in the paper look, in proportion to their size, and the outlined square for your own
+message is rounded the same way. They stay square in the Omarchy look. In 0.30.4 the release note said the
+list row's squares were rounded, but only the open conversation's row was. The other rows kept sharp corners.
+On desktop and web, the hover box of a square beside a conversation in the narrow reader is now rounded too.
+
+### The open conversation's row shows one strip of squares and one box
+
+On desktop and web, the open conversation's row in the list could show its small squares and the
+walking strip under them at once, with the keyboard ring round the row alone and a second frame round
+the strip below it. The row now draws its squares once, as the strip while the conversation is open,
+and the keyboard ring, a pick and the slide to Earlier take the row and its strip together.
+
+### Search finds a letter when your words sit in different parts of it
+
+A search of two or more words found a letter only when every word was in the same part of it: all in the
+subject and sender, or all in the text. `kai lanternfish` missed a letter from Kai whose text mentions
+lanternfish, and `aquarium food` answered "Nothing matched exactly" for an invoice titled "aquarium
+supplies" whose text says "food". Each word may now sit anywhere in the letter: subject, sender,
+recipients, file names or text. A quoted phrase still has to appear as written in one place, and a word
+with a minus in front (`-lanternfish`) now keeps out every letter that holds it anywhere, closest-word
+guesses included; before, it was checked in one part only. A single typed term such as an address
+(`anna@club.ch`) or a hyphenated word still has to appear in one place. On the desktop app, the phone,
+Cloud and your own server. While search is still indexing your mail, a letter it has not reached yet is
+read one part at a time until it has. On the phone, a word found only in a sender's display name, a
+recipient or a file name still cannot take part in a search of several words: the phone's word index
+holds the subject, the sender's address and the text.
+
+### A message sent from another device no longer comes back in Compose
+
+On the web and the desktop, a message you started here and then sent from another device no longer reopens when you press Compose. Before, Compose showed it again with its recipients and words, and a new message typed into it went to both the old and the new recipients with the old words. Compose now opens an empty message. Anything you wrote here after the last save is kept once in Drafts, and you are told. The same holds for a reply: Reply no longer brings back a reply that already went from another device.
+
+On the device you send from, the message now leaves Drafts as soon as it is sent. Before, a save that arrived just after the send kept it in Drafts with its words and Discard for up to a minute and a half, one press away from sending it again.
+
+On your own server, update the server before the web app and the desktop app; an older app keeps working as before.
+
+### A draft saved while offline belongs to its message when it reaches your account
+
+On the web and the desktop, a reply or message written without a connection is saved as a draft once the connection is back, and the reply or message on screen now keeps using that draft. Before, a second reply written offline could be sent without it, and its draft stayed in Drafts after the reply went, one press away from a second copy. A draft saved twice while offline now ends up as one, and a draft that was already on its way when you pressed Send is removed once the message has gone. A reply closed and opened again, with Reply or from Drafts, before its draft reached your account keeps using that draft too: it is sent once and leaves no copy behind. The same holds for a message reopened from Drafts while its draft was still on its way, which no longer leaves a second copy with older words, and for a reply or message whose page was reloaded before the connection came back. Cancelling a send that was waiting on a slow first save leaves one draft of a reply, and nothing of a message you discarded.
+
+### ohmail Cloud says when storage is nearly full, and what adds room on your plan
+
+The storage notice on the web app, the desktop app on ohmail Cloud and the phone now also appears at 90% of
+your plan's stored-text limit, before any text is emptied, and again when the limit is reached. It names
+what keeps more text from now on for your plan: a bigger plan, or the storage add-on, or on the largest plan
+the storage add-on alone (during a trial on the largest plan, once the subscription is paid). Put away, it
+comes back when the storage gets fuller or when you are nearing a new limit. During a trial's 4 GB of
+storage and the 14 days after the first payment, it says in time when your plan's own limit applies and
+that the text of the oldest letters beyond it is emptied then. After a move to a bigger plan, text emptied
+under the old limit is no longer described as being emptied now. Well below the limit the notice offers no
+purchase and shows no Manage subscription button. Where no emptying was recorded with a date, it says only how
+many letters' text is not stored here, not that they were the oldest. A notice you put away in 0.30.4 stays
+away until the storage gets fuller. Mac App Store and phone store builds still
+name no plan and offer no purchase; your own server has no limit and shows nothing.
+
+### Connecting a mailbox starts with your address
+
+The connect forms now ask for your address first: on the web's setup and in Settings → Mailboxes, in the
+first-run add form, and in the desktop app's door for your own mail server. An address at a provider ohmail
+knows (Gmail, Outlook.com, iCloud, Yahoo, Fastmail, GMX, Infomaniak, WEB.DE, t-online, bluewin) chooses its
+tile for you, and you can still pick another. On ohmail Cloud, an address at your own domain is looked up
+as you type: a domain on Google Workspace chooses Gmail and one on Microsoft 365 chooses Microsoft, even
+when you pressed the manual "Any other IMAP mailbox" before the answer came. Only the domain is sent. A
+slow or failed lookup leaves the choice to you, and a Proton address says why it cannot connect.
+
+Each provider's note now opens with what you'll need before you type a password. A refused password on a
+named provider says that provider's own sentence, and when the server you typed for "Any other IMAP
+mailbox" cannot be reached, the form offers the servers your domain's DNS names, with a button that only
+fills them in. The sign-up page's account step now links to sign-in for people who already have an
+account.
+
+### A forward shows the message it forwards, and folds only the thread below it
+
+Forwards from Outlook, Outlook on the web and Samsung Email write no forward wording into the body, so
+ohmail took their forwarded message for a reply's quoted history and hid it behind Show history. ohmail
+now also reads the subject: when it starts with a forward's prefix in any of the common languages (Fwd,
+FW, WG, TR, I, RV, Doorst), the forwarded message stays open. Below it, the older messages of a
+forwarded thread fold behind Show history, for these forwards and for Gmail, Apple Mail and Thunderbird
+forwards alike, which before showed every level in full. A forward of a forward ("WG: WG:", "Fwd: Fwd:")
+shows the letter the inner forward delivers. A forward of a letter that is already in the same
+conversation still shows it. In every reader, News and Receipts included, on the desktop app, the web app
+and the phone.
+
+### Send again looks in Sent first and sends the same message, with its files
+
+When ohmail could not confirm a send, Send again used to mark the held send as not arrived and send the
+letter as a new message, without looking in Sent and, on the phone, at times without its attachment. A
+letter that had in fact been delivered then reached its recipient twice. Send again now asks the server to
+send the held message itself: it looks in your Sent folder first and sends nothing when the message is
+there, it goes under the same Message-ID, and it carries the files that went the first time. A Send later
+message that could not be confirmed can be sent again too. If the message cannot be matched to the one
+that was held, or Sent cannot be checked, nothing is sent and the press says why; on the phone you can then
+make it a draft again and send it as a new message. One press sends at most once, however often it is
+retried, and a press that sent it says "Sent.", never that nothing went.
+
+On the phone, the sheet of a send that could not be confirmed now offers Send again and Close; Close leaves
+the message in Drafts. A delivered letter whose copy could not be put in Sent says so. Drafts says it is
+checking your Sent folder for twenty minutes after a send could not be confirmed, looking one and fifteen
+minutes in, and then that the message is not there; it used to say "checking" for a day. A copy that
+reaches your mailbox's Sent folder later that day still settles the send by itself.
+
+If your mail server does not keep the mail it sends in Sent, and the server took a message whose answer
+was lost, no check can see it: Send again then sends it once more under the same Message-ID, and the
+phone says so beside the button, in the sheet and on the Drafts card. Send again on the web and desktop apps still sends a new message; they
+follow in a later release.
+
+### Shortcut keys do what the sheet says, and "Tomorrow" after midnight means this morning
+
+In Answer Later, `d`, `⌫` and `⌦` now delete the letter on screen as they do in the Ohbox. `⇧R` on a
+letter from one person opens the reply to that person instead of doing nothing. `z` after the Undo
+window has closed says "Nothing to undo." rather than staying silent. The shortcut sheet lists
+`Ctrl ↵` as "Send the reply" outside the Reply Run, where it does not move to the next message
+(web and desktop).
+
+Between midnight and 05:00, Resurface's "Tomorrow" and Send later's "Tomorrow morning" now mean the
+coming morning, on web, desktop and phone. Resurface's "Pick a date" offers today while the chosen
+time is still ahead. On a Sunday, Resurface ("Next week") and Send later ("Monday morning") no
+longer offer the same Monday a second time beside "Tomorrow".
+
+### A letter held at the gate is dated by when it arrived
+
+A letter the Screener held could carry an old `Date:` (a calendar stamp, a re-sent letter)
+and be filed under History at once, read or unread, so its sender was never asked about. The Screener
+now dates a held letter the way the gate did, by when your server received it: such a sender waits in
+the Screener, on the web, the desktop app and the phone, and the count beside it agrees. Mail your server
+received before the window, and mail a mailbox's first import brought in, still waits in History, read
+or unread. Settings > Screener now says so: the
+note under "When a sender goes quiet" no longer claims that unread mail always shows. On Cloud and your
+own server this needs the server updated with the apps.
+
+### Changing where a rule files mail moves only the mail it filed
+
+Settings > Rules > Change, with "Also move the mail it filed" on, now moves the messages the rule
+filed in its old place to the new one, and nothing else. Before, it moved the sender's messages that
+were left in the Ohbox when the rule was made, and left the message the rule had filed behind. Messages
+you replied to, filed in another mail app or set aside stay where they are, and so does mail another
+rule filed. The pane and the toast name the place the mail comes from and count only that mail, in the
+mailboxes ohmail organizes. The move waits out the toast's Undo, so an Undo moves nothing. When a press
+in the sender sheet asked for a sender's earlier mail and that is not finished, a Change moves the mail
+the rule matches to the new place, and its Undo sends it back where it was going. Web and desktop, on
+Cloud and your own server.
+
+### Every press that needs a fresh second factor asks for it in place
+
+On the web, on Cloud and on your own server, a few presses answered a sign-in older than a few minutes
+with a refusal and nothing else: taking a mailbox over from the setup's "Organize here instead", testing
+and connecting a mailbox in setup, forgetting it from setup's Start over (which went on to an empty
+start while the mailbox stayed connected), replacing recovery codes, replacing or removing the authenticator app,
+making or withdrawing an invite link, and confirming the desktop app's sign-in. Each now asks for your
+code or passkey right there and, once it verifies, does what you pressed, without signing in again.
+Cancel leaves everything as it was and says so. In Settings → Mailboxes, the code prompt behind "Take
+over" now opens in the mailbox's own card and says it is for the take-over, and cancelling it says that
+nothing changed; before, it opened under the list while the card looked as if the press had done nothing.
+
+### The desktop app asks about an update in its own window
+
+When the desktop app has downloaded and verified an update, it now asks inside the ohmail window, with the
+update strip and its Restart button, instead of opening a separate dialog. That dialog had no parent window on
+Linux, so on a tiling desktop such as Omarchy (Hyprland) it opened on whatever workspace was in front rather than
+where ohmail runs. "Later" still leaves the update ready, and the strip asks again at most once a day, or at once when
+Check for Updates or Try again finds the update ready.
+
+### The desktop columns keep an even frame on Omarchy
+
+On Omarchy the rail, the list and the reading column now sit inside the window with the same gap
+around them as between them, whatever Hyprland's gaps read: an outer gap of 0, one side set
+narrower than the others, or Omarchy's own window-gaps toggle left the columns pressed against the
+window edge or against each other. Toggling the window gaps now reaches an open window without a
+restart (desktop).
+
+### Cloud erases a closed account only after its erasure warning was delivered
+
+ohmail Cloud erases the account data of a subscription that stayed closed past its retention period, and
+mails a warning in the week before. The erasure now waits until that warning was delivered. A warning that
+never went out, because the mail limiter held it back or a run stopped before sending, goes out late and
+names a date a week ahead, and the erasure waits for that date. After the erasure ohmail keeps when the
+warning was delivered, under the account's random id only (no address, name or mail), for ten years, as
+long as the billing record; then the hourly maintenance deletes it. A lifecycle mail that reached nobody is
+no longer recorded as sent, and a later run sends it. Deleting your account yourself is unchanged.
+
+### Cloud can remind a new trial once to connect its mailbox
+
+On ohmail Cloud, a trial that has connected no mailbox a day after it began can get one mail that says so. Its
+button signs in if needed and opens the setup's mailbox step. Gmail addresses get the app password steps, a
+Microsoft 365 work or school mailbox is pointed to Connect Outlook under Settings → Mailboxes, Outlook.com and
+Hotmail addresses are asked to reply for help, and a reply reaches a person. It goes out at most once per trial,
+never to a trial set to cancel or with two days or less left, and carries no tracking. It starts switched off:
+until it is switched on, the nightly run only logs which trials it would remind. Switching it on names the time
+it starts from, and a trial that began before then is never sent it.
+
 ## [0.30.4] — 2026-10-25
 
 ### The thread squares follow your reading, and the open row in the list shows them too
@@ -13684,7 +13878,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.4...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.5...HEAD
+[0.30.5]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.5
 [0.30.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.4
 [0.30.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.3
 [0.30.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.2

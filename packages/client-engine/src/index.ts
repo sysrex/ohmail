@@ -481,6 +481,7 @@ export {
 // The Ohbox as ROWS, one per conversation across its sections — the fold every surface draws.
 export {
   foldOhboxRows,
+  parkSubjectIds,
   ohboxRows,
   ownFaceOfRow,
   rowOpenTarget,

@@ -78,6 +78,52 @@
   </screenshots>
 
   <releases>
+    <release version="0.30.4" date="2026-10-25">
+      <description>
+        <ul>
+          <li>The thread squares follow your reading, and the open row in the list shows them too</li>
+          <li>On the phone the squares follow you through a conversation, and the list row carries them</li>
+          <li>Softer thread squares in the paper look, and a fuller name card on each</li>
+          <li>On the phone, holding a thread square shows who wrote that message and when</li>
+          <li>A message you send stays in view while it goes, and a forward shows what it forwards</li>
+          <li>Answers typed inside a quoted Outlook mail stay in view, and GMX replies fold their history</li>
+          <li>News and Receipts stay ready between visits on the web too</li>
+          <li>The desktop's columns keep their outer borders when Hyprland reports no outer gap</li>
+          <li>The phone keeps the newest message in view when a foldable opens to two panes</li>
+          <li>Folding the phone half open or to its outer screen keeps your place and marks nothing read</li>
+          <li>Sent to … also appears when a send's first answer was lost</li>
+          <li>The desktop app sends at once on ohmail Cloud</li>
+          <li>A slow send keeps its Sent copy, and a dropped upload says it was not sent</li>
+          <li>Large attachments leave from the browser, or the send says why not</li>
+          <li>Park takes the whole conversation out of the Ohbox</li>
+          <li>A filing into an ohmail folder another app deleted is filed again</li>
+          <li>The desktop and the phone say which filings wait, and why</li>
+          <li>Letters deleted in another mail app leave ohmail, Spam included</li>
+          <li>A draft you discard stays discarded</li>
+          <li>A draft open in two places no longer overwrites itself</li>
+          <li>Phone: a message waiting for the network is in Drafts, and Discard cancels it</li>
+          <li>Letters that arrived while a phone had handed its mailbox back are offered after Start</li>
+          <li>Letters on the phone show the date they were sent, whatever form their Date line takes</li>
+          <li>The Ohbox count on the rail includes letters brought back by Resurface</li>
+          <li>Unread messages in a conversation are no longer blue in ohmarchy's light themes</li>
+          <li>A letter filed in another client stays in News or Receipts</li>
+          <li>Phone: people you have written to get through to your Ohbox</li>
+          <li>A letter being written on the phone survives a force-stop, and a kept draft keeps its files</li>
+          <li>Screening a thousand letters no longer stops the phone saving new mail</li>
+          <li>A photo attached on the phone keeps a real name</li>
+          <li>Settings has a Help &amp; contact section</li>
+          <li>Setup picks up where it stopped when no mailbox is connected yet</li>
+          <li>Sign-up offers Sign in with Microsoft for a Microsoft mailbox</li>
+          <li>WEB.DE, t-online and bluewin get their own tiles, and Proton Mail says why it cannot connect</li>
+          <li>The sign-in screens show a new person where to sign up and set up</li>
+          <li>Trial mails no longer promise to keep organizing a mailbox that was never connected</li>
+          <li>Erasing a mailbox frees its storage on ohmail Cloud</li>
+          <li>ohmail Cloud checks its storage count before emptying older letters</li>
+          <li>ohmail Cloud tells you when it stops storing the text of older letters</li>
+          <li>A forward can send only the files the person kept</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.30.3" date="2026-10-24">
       <description>
         <ul>
@@ -126,31 +172,6 @@
           <li>A conversation opened from the Ohbox shows which messages are new, and reads them as you see them</li>
           <li>A message whose formatting was removed can be sent again</li>
           <li>The desktop's opening line stays inside the sidebar</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.29.0" date="2026-10-23">
-      <description>
-        <ul>
-          <li>Send leaves a resurfaced conversation where it was</li>
-          <li>A meeting invitation shows its event once, at the top of the message</li>
-          <li>The images for your own server, the Cloud mail worker and the desktop app's engine run Node.js 22.23.4</li>
-          <li>Later and Park on a conversation you answered file the letter, not your reply</li>
-          <li>Removing a mailbox keeps its unsent drafts</li>
-          <li>Setup's counts agree with the Screener, and count the mailbox you are setting up</li>
-          <li>Mail at providers other than Gmail and Microsoft can be confirmed by its sender's own signature</li>
-          <li>The phone's Connect says when it cannot trust your mail server's certificate</li>
-          <li>Links in the desktop app open only on your own click</li>
-          <li>Letters from new senders that arrived while nothing organized a mailbox go to the Screener when you file them</li>
-          <li>Letters that arrived after a hand-back are offered on the install that organizes next</li>
-          <li>Closing the desktop app on a slow mail server no longer leaves the mail store to be recovered</li>
-          <li>A second engine can no longer open the same mail store on macOS and Windows</li>
-          <li>New mail arrives at once again after a delete on Dovecot and other QRESYNC servers</li>
-          <li>A mailbox keeps syncing when the server sends more for its mail than it stated</li>
-          <li>A rule change no longer waits on a mailbox you removed</li>
-          <li>Cloud: checking mailboxes costs less again</li>
-          <li>Building and testing from a fresh clone is checked every week on Linux, macOS and Windows</li>
-          <li>Without the test services, the suite skips what needs them instead of failing</li>
         </ul>
       </description>
     </release>

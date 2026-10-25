@@ -21,6 +21,402 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.4] — 2026-10-25
+
+### The thread squares follow your reading, and the open row in the list shows them too
+
+In the Ohbox on the web and the desktop, the ring on a conversation's squares now walks from the first message at the
+top to the last at the very end, one message at a time and never backwards, even when the last message is a single
+line. Pressing a square brings that message to a steady reading height and keeps the ring on it until you scroll.
+
+The open conversation's row in the list now carries the same squares under its preview, ringed where you are reading.
+Pressing one scrolls the conversation there. Once the conversation is closed, the row keeps the ring where you
+stopped, and pressing a square opens the conversation at that message. A reply that arrives, or a conversation marked
+unread, shows on the row's squares right away.
+
+Pointing at a square, or reaching it with the keyboard, shows who sent that message and when.
+
+The squares now stand an equal gap from the list and from the message, and their corners follow the theme, so they
+are square in the Omarchy look.
+
+### On the phone the squares follow you through a conversation, and the list row carries them
+
+On Android and iOS, the ringed square beside a conversation in the Ohbox now walks it from first to last:
+at the top the first message is ringed, at the very bottom the last one, even when it is a single line,
+and it never steps back while you scroll one way. A press on a square brings that message's top to the
+reading line and keeps its ring until you scroll. Back on the list, the conversation's row shows the same
+squares, ringed where you stopped; a press on one opens the conversation at that message. Under ohmarchy
+the squares have square corners.
+
+### Softer thread squares in the paper look, and a fuller name card on each
+
+On the web and the desktop, the squares beside a conversation and in its list row have softly rounded corners in the
+paper look, with the ring around the current one rounded to match. They stay square in the Omarchy look.
+
+Pointing at a square, reaching it with the keyboard, or holding a finger on it now shows two lines: who sent the
+message ("you" for your own) with a friendly date such as "yesterday 17:40", and the message's first line, with a
+paperclip when it has an attachment. Holding a finger on a square no longer jumps to the message.
+
+### On the phone, holding a thread square shows who wrote that message and when
+
+On the phone, the squares beside a conversation and in its row in the Ohbox list have softly rounded corners in the
+paper look, with the ring around the current one rounded to match; they stay square in the Omarchy look.
+
+Holding a finger on a square now shows a small card beside the squares or under the row: who sent that message
+("you" for your own) with a friendly date such as "yesterday 17:40", and its first line, with a paperclip when it has
+an attachment. Holding does not jump to the message; a tap still does.
+
+### A message you send stays in view while it goes, and a forward shows what it forwards
+
+On the web and the desktop app, the line at the bottom of the sidebar that says "Sending to …" and
+then "Sent to …" now stays at the bottom of the window. With a few mailboxes, folders and tags it was
+drawn below the sidebar's fold, so after the editor closed nothing said the send was on its way. The
+folder list now scrolls above it. On a short window, several sends at once scroll inside the line, with
+the newest send always in view, so Compose and the folder list keep their room.
+
+A forward with a note ("---------- Forwarded message ---------", "Weitergeleitete Nachricht", "Begin
+forwarded message:") shows the forwarded message whole again on the web, the desktop app and the phone,
+instead of folding it behind Show history. Replies still fold their quoted history, including a reply
+that quotes a forward.
+
+### Answers typed inside a quoted Outlook mail stay in view, and GMX replies fold their history
+
+On the web, the desktop app and the phone, a reply whose answers sit inside the quoted mail, in the
+same black text and marked only with the writer's initials or name ("[AE] Yes, …", "[Ana Example]
+Yes, …"), no longer hides those answers behind Show history. A one-line "[EXTERNAL]" notice or an image
+placeholder in the quoted mail does not count as an answer, so such replies still fold.
+
+Replies from GMX, WEB.DE and mail.com now fold their quoted history when the reply is one sentence
+("Ja, Dienstag um 10 Uhr passt mir gut."); before, the whole history stayed open below it.
+
+### News and Receipts stay ready between visits on the web too
+
+On the web, News and Receipts were built again from scratch at every visit, so switching to them took as
+long as opening them for the first time. They now stay ready while you are on another pile, as
+on the desktop: a switch back shows the list where it was built, with any mail that changed meanwhile. A
+pile you are not looking at marks nothing as read.
+
+### The desktop's columns keep their outer borders when Hyprland reports no outer gap
+
+On Omarchy the desktop app takes the edge around its columns from Hyprland's outer gap. When that read
+came back as 0, the rail, the list and the reading column stood flush against the window, their outer
+borders drawn outside it, so only the seams between the columns showed their doubled lines. The edge is
+now never narrower than the columns' border, so every column keeps its whole frame.
+
+### The phone keeps the newest message in view when a foldable opens to two panes
+
+A conversation opened on the phone lands with the newest message in view. Rotating or unfolding a
+foldable from one pane to two (and back) moved the reader into the middle of the longer message above
+it, and the newest left the screen. The reader now lands on the newest message's top again after that
+switch, or at the conversation's end where the newest is shorter than the screen, also when its body
+arrives after the switch; a place further up still keeps the message under the top line. Nothing is
+marked read on the way.
+
+### Folding the phone half open or to its outer screen keeps your place and marks nothing read
+
+On a foldable phone, a conversation you were reading kept its place when you half-folded the phone
+(the book posture) or folded it to the outer screen, and no older message turned read on the way. Before,
+the reader could come back at a spot inside an earlier message and mark that message read on the server
+although you never saw it. While the reader finds its way back after a fold, a rotation or a new width,
+it now reads nothing until it stands at your place again or you scroll yourself, and a message you had
+only begun to look at before the fold needs its full look again. A conversation opened from one of its
+squares on the list keeps that message through a fold, and one that fits the unfolded screen whole reads
+as usual.
+
+### Sent to … also appears when a send's first answer was lost
+
+When the server delivered a message but its answer never reached the app, the retry under the same key was
+answered from the server's record of that delivery, and the sidebar's foot went blank instead of saying
+"Sent to …", with a note that the message "had already been sent". The retry of your own press now ends the
+way any delivery does: the foot says "Sent to …" (or the editor that waited says "Message sent."), and a
+single press no longer gets the "already been sent" note. A press that joins or resumes an earlier send still
+says so. On the web and the desktop app.
+
+### The desktop app sends at once on ohmail Cloud
+
+On the desktop app signed in to ohmail Cloud, or to a server of your own paired the same way, a new
+message no longer waits about two seconds before it goes out, and the foot no longer says "Still sending
+to …" after the account has already taken it. The app used to wait for this computer's copy of the mailbox
+to catch up with each half of a send before going on; a send now goes on as soon as the account answers,
+and the copy catches up behind it. "Sent to …" appears about as quickly as on the web.
+
+### A slow send keeps its Sent copy, and a dropped upload says it was not sent
+
+A send whose mail server took a long time to accept it was delivered but could lose its copy in Sent: the copy went over the mail connection opened before the send, which had timed out by then. The copy is now filed after the server accepts the message, on a fresh connection when the first one has died, and every retry looks in Sent first, so there is exactly one copy. Cloud files it before it answers; the desktop app, the phone and your own server answer at once and keep trying in the background.
+
+When the connection drops while the message is still uploading, ohmail now knows the message was not sent and says so ("the connection dropped before the whole message reached your mail server"), and the draft is a draft again. Before, this read as "We couldn't confirm this send". Only a drop in the last moment, once every byte has left your device and before the server answers, still asks you to check Sent. A recipient the server refuses is named the same way.
+
+A slow upload is no longer checked while it is still running: its draft stays "sending" until the server answers, instead of turning "We couldn't confirm" after ten minutes and being sent a second time by Send again. On Cloud, several letters scheduled for the same minute no longer run past the time a scheduled pass is given; the ones it cannot finish go out on the next pass.
+
+On the phone and the desktop app, a large attachment on a slow link no longer times out while it is still uploading: the phone hands the network at most 16 KiB at a time, and the local send waits up to two minutes for the server instead of 25 seconds.
+
+### Large attachments leave from the browser, or the send says why not
+
+On ohmail Cloud in the browser, a message with more than 3 MB of attachments never left: the page's
+security policy blocked the upload to storage, the send kept retrying with "Not sent yet. ohmail is still
+trying.", and Compose kept reopening that message, so no other could be written. The page now admits the
+storage upload path, and nothing else on that host. A page that cannot upload offers 3 MB of attachments,
+what a send carries without the upload, and a send it cannot upload ends with "Not sent", the draft kept and
+Compose free again. An upload whose storage cannot be reached gives up visibly instead of retrying for ever,
+in the browser and in the desktop app on an ohmail Cloud account.
+
+### Park takes the whole conversation out of the Ohbox
+
+Park (`e`, or the Park button) on a conversation in the Ohbox parked only its newest message, so the
+conversation stayed in the Ohbox, still selected, and each further message needed its own press. Park now
+parks every message of the conversation the Ohbox shows as one row, your own reply included: the row
+leaves, the next one is selected, and one Undo (`z`) brings them all back. Mail of the conversation filed
+elsewhere (archived, or under Answer later) stays where it is. On the phone, a second press of Park in the
+open message brings the whole conversation back. Desktop, web and phone.
+
+### A filing into an ohmail folder another app deleted is filed again
+
+When another mail app deleted one of ohmail's own folders (say an empty `ohmail/Screened`), every
+letter filed there afterwards stayed in the Inbox on the server, and ohmail said "your mail server
+refused it". The organizer now makes its own folder again, once, and files the letters there. A
+folder of yours that is gone is never made again; the filing waits with the reason "the folder is not
+there". All apps.
+
+### The desktop and the phone say which filings wait, and why
+
+Letters your mail server has not taken into their folder yet are now listed in Settings on the
+desktop and on the phone, as on the web: how many, into which folder, since when, why ("the folder
+is not there", "the mailbox is full", …) and where they are now, with Try again now and Leave them
+where they are. The phone also shows the strip over the Ohbox that it never had, and Check this
+mailbox on the phone counts the filings that still wait.
+
+On a desktop signed in to ohmail Cloud the strip and the list now show the filings Cloud holds;
+before, that desktop always said none were waiting. On a phone with more than one account, Settings
+lists the waiting filings of the account you are looking at.
+
+### Letters deleted in another mail app leave ohmail, Spam included
+
+On Cloud and the desktop app, a letter you marked as Spam that another mail app then deleted from the
+provider's Junk folder stayed in History and Search. ohmail now checks the letters it filed into Junk
+and lets the deleted ones go; a Junk folder it cannot read in full deletes nothing. The Screener no longer
+offers letters that are already gone from the server, and deleting a letter that is already gone says so
+instead of listing it in Trash.
+
+### A draft you discard stays discarded
+
+On the web and the desktop, deleting a draft from Drafts now also empties a message or reply that still held it, together with the copy the browser keeps of it. The words no longer come back the next time you open Compose or reply to that message, and a reload no longer saves them again as a new draft that reached your other devices. When the delete is refused because the draft is still being sent, the draft stays in Drafts and says so, and the editor stays empty.
+
+A message or reply whose draft was deleted on another device is no longer saved again when it reopens, also when its last changes were saved while offline and ohmail saw them reach the draft. Changes it never saw arrive stay on screen with a note that the draft was deleted, and are saved as a new draft once you edit them. If you had typed something there that the draft never held, it is kept as a new draft and the message says why.
+
+### A draft open in two places no longer overwrites itself
+
+On the web and the desktop, when a message you are writing is changed in another window or on another device, what you type here no longer silently replaces it. The draft keeps the other version, what you typed is kept as a new draft beside it, and the message says so. Send does not send the other version, and what is on screen is kept as a new draft there too; "Send as a new letter" sends it. Edits made offline that come back to a draft changed elsewhere are kept as a new draft as well, and you are told once. Your own saves, including ones made offline or retried after a lost connection, never count as a change elsewhere.
+
+A send whose save was refused now says it was not sent, and no longer says your draft is kept when the draft holds different words.
+
+On your own server, update the server before the web app and the desktop app; an older app keeps working as before.
+
+### Phone: a message waiting for the network is in Drafts, and Discard cancels it
+
+On the phone, a message or a reply sent with no network is listed in Drafts at once as Waiting to send, with
+Cancel send beside it; Cancel send keeps the words as a draft, also when the server cannot be reached to
+cancel, and says so when they could not be kept. Discard on it cancels the send, deletes the draft
+and says that nothing was sent. It no longer ends in "Sending didn't work" and a "could not be saved" banner
+that stayed on every screen. A send already on its way when Discard is pressed says so, and nothing is deleted.
+
+### Letters that arrived while a phone had handed its mailbox back are offered after Start
+
+On Android and iOS, a letter that came in after Stop organizing here and before Start organizing here
+was never filed by your rules and never offered, unless its sender was new. The phone stored every
+letter without the time it reached your mail server, because its date parser refused the form the
+server writes that time in. The phone now reads that time itself, so after Start the letters from
+senders with rules are offered to be filed, and the new senders' to be screened, as on the desktop.
+
+The phone also reads the server's time on its organizer claim now, as the desktop does: a phone whose
+clock is more than about two and a half minutes off the server's stops syncing, and its card and its
+notification say so in the desktop's words until the clock is set.
+Letters a phone stored before this change keep no arrival time; when such a window closes with
+nothing to offer, the organizer logs how many it could not see.
+
+### Letters on the phone show the date they were sent, whatever form their Date line takes
+
+On Android and iOS, a letter whose Date line had no weekday, no seconds, the zone written `UT`, `Z` or
+`+02:00`, a month in lower case, or a two-digit year was stored with the moment the phone read it as its
+sent date, or with a date in the year 26. The phone now reads these dates as the desktop does, so such
+letters show and sort by the time they were sent, and the Junk and Trash lists show their dates. Letters
+the phone already stored keep the date they were stored with.
+
+On every app, a Date line whose zone is a common name such as `CET`, `CEST`, `MEZ` or `JST` is read at
+that zone's offset, instead of as the moment the letter was read. An ambiguous or unknown name is read
+as before.
+
+### The Ohbox count on the rail includes letters brought back by Resurface
+
+A letter brought back to the top with Resurface > Now was left out of the rail's Ohbox number, and out of the
+dock badge, while the Ohbox header counted it, and a reload did not fix it. The rail, the header, Mark all read,
+the badge and the phone's Ohbox now count the same unread letters (web, desktop, phone).
+
+### Unread messages in a conversation are no longer blue in ohmarchy's light themes
+
+In the ohmarchy face's light themes an unread message in a conversation sat on a pale wash of the
+theme's accent, light blue in Flexoki Light. It now sits on the theme's own surface, the panel taken a
+step toward its ink, beside the accent edge it already had; a message you have read settles back to the
+panel as before. Its text, the sender's address, the time and links included, keeps at least 4.5:1 in every
+light theme, which the old wash missed in Catppuccin Latte, Rosé Pine, Lupine and White. Desktop, web and
+phone; the paper face is unchanged.
+
+### A letter filed in another client stays in News or Receipts
+
+A letter from somebody you let in that first shows up in News, Receipts, Screened or Quarantine, because
+another mail client, a server filter or a plus address put it there, now stays where it was filed. Before,
+ohmail moved it back to the Ohbox within a minute and said nothing. The Ohbox's "Since you were here" line
+does not count it as ohmail's filing. Mail from senders you have not let in still goes to the Screener, and
+a sender you quarantined still goes to Quarantine. On the desktop app, Cloud and your own server.
+
+### Phone: people you have written to get through to your Ohbox
+
+A phone that runs its own mail engine never asked about the people you had written to before you
+connected, so each of them counted as a first-time sender: their next letter waited in the Screener, and
+the rest of their mail left the Ohbox with it. Once the first import has finished, the phone now shows the
+people from your sent mail, as the web does, and asks whether they may get through. Everyone not yet
+decided starts ticked, people you already decided about are shown and left as they are, and the addresses
+left out are listed with the reason. Confirming adds a rule for each ticked person and moves anything of
+theirs waiting in the Screener back to your Ohbox; nothing else moves. "Not now" is kept for that account
+on this phone, and Settings, "People you write to", opens the list again. The "Screen" offer in the Ohbox
+waits until this is answered, so it cannot hold the people you are about to let through.
+
+A phone already in use asks once after the update, and a yes returns their held letters.
+
+### A letter being written on the phone survives a force-stop, and a kept draft keeps its files
+
+On the phone, a letter was kept only when its sheet closed, so a force-stop, a reboot or a crash lost what
+was typed and any picture attached to it. The phone now writes the open letter to its own storage half a
+second after each change, and at once when the app leaves the screen; the next launch turns a letter left
+that way into a draft and says so once. A letter that was being sent is never sent again by that launch:
+if its send still waits it goes once, and if it is unclear whether it went, it is kept in Drafts with a
+note to check Sent first. A send the server could not confirm stays the one row Drafts shows for it, with
+its attachments.
+
+A letter kept in Drafts now keeps its attachments on this phone (a draft on the server holds no files),
+up to 12 MB for all drafts together; opening the draft again brings them back, and sending it sends them.
+Files past that limit are named before the draft is kept.
+
+### Screening a thousand letters no longer stops the phone saving new mail
+
+On a phone running on its own, pressing Screen on a large Ohbox (up to a thousand letters) wrote its
+bookkeeping one letter at a time while holding the phone's mail store. On a slow device that took
+minutes, and every other write waited behind it: new mail could not be saved, filing paused, and the
+Ohbox said "New mail could not be saved on this phone" until the press finished. The press now writes
+the whole batch in a handful of statements, so it holds the store for a moment instead. When a
+write does have to wait, the phone's diagnostic file now says so by name and records what held the
+store and for how long.
+
+### A photo attached on the phone keeps a real name
+
+On the phone, Attach a photo listed and sent a picture under the photo picker's media number, such as
+"19.jpg". A picture now keeps its own file name; where the picker gives only a number or a cache name, it is
+named "Photo" with the date and time of the pick ("Foto" in German), and a second picture of the same name
+in one pick gets " (2)". Picking the same picture again still says it is already attached rather than
+listing it twice. Attach files was not affected.
+
+### Settings has a Help & contact section
+
+Settings on the web, the desktop and the phone gains Help & contact, beside About. Write to us opens a new
+mail to support@ohmail.app from your own mailbox, with a subject and a short diagnostics block: the app
+version and build, the platform, your account id, which kind of mailbox is connected and the kind of its
+last sync error. The block never holds an address, a host, a subject, a folder name or any mail content; it
+sits in the message where you can read it, and one press removes it. Where there is no mailbox to send
+from, Write to us opens your mail app with the same subject and block; on the desktop, which would
+open its own composer instead, it offers the address and the block to copy. A self-hosted server's web app has
+no such section, since its operator, not ohmail, runs that server.
+
+### Setup picks up where it stopped when no mailbox is connected yet
+
+On the web (ohmail Cloud and your own server), an account that signed up but never connected a mailbox no
+longer comes back to an empty mail client. Once per browser tab, opening ohmail takes it to the setup page,
+which resumes at the mailbox step. "Do this later" on that page is respected for the rest of the tab. It never
+happens over a link to a particular place in the app, or while a mailbox sign-in is finishing. A signed-in
+account never sees the sign-up form there: the page waits until the server has said where setup stands, and
+if the server cannot be reached it says so, with Try again.
+
+An empty Ohbox with no mailbox now shows a "Connect your mailbox" card. Its button, and the link in the sync
+bar, open the setup page on the web and Settings → Mailboxes in the desktop app. The setup dialog on the web
+hands its first connect to the setup page, which can ask for your second factor in place. The ohmarchy theme
+offer waits until a mailbox is connected, on every app.
+
+### Sign-up offers Sign in with Microsoft for a Microsoft mailbox
+
+On ohmail Cloud and on servers set up for it, the sign-up's mailbox step now connects the Microsoft tile by
+signing in with Microsoft, as Settings → Mailboxes already did. An app password is still there behind "Use an
+app password instead". After the sign-in the browser comes back to the sign-up, which names the mailbox once
+it is connected or says in its own words why it was not, with the Microsoft tile ready to try again. A
+password Microsoft refuses points to the sign-in instead of to app passwords. A server whose only Microsoft
+door is the device code points to Settings → Mailboxes after setup.
+
+The mailbox step also has a way out: "Do this later" opens ohmail without a mailbox, and on ohmail Cloud "or
+write to us" starts a mail to support that names the provider and the last refusal's code, nothing typed.
+
+### WEB.DE, t-online and bluewin get their own tiles, and Proton Mail says why it cannot connect
+
+The provider picker on the web, in the desktop app and on your own server now offers WEB.DE, t-online and bluewin, with their servers filled in and what each needs before you type a password: WEB.DE's IMAP switch, Telekom's separate e-mail password. On the phone, an address at web.de, t-online.de or bluewin.ch fills in its servers. A Proton Mail tile explains that Proton reaches other mail apps only through Proton Bridge, which ohmail cannot connect through yet, so a Proton address no longer fails without a word. The "Any other IMAP mailbox" tile now tells you to choose Gmail or Microsoft when your own domain's mail is hosted by Google Workspace or Microsoft 365.
+
+ohmail Cloud can now look up which provider hosts a domain's mail from that domain's DNS records alone (MX, and the SRV records of RFC 6186), for the connect forms to suggest a provider. Only the domain is sent, never the part before the @, and nothing about a lookup is stored or logged.
+
+### The sign-in screens show a new person where to sign up and set up
+
+On the web, where anyone can sign up, the sign-in page now has a "Create an account" link next to
+"Have an invite code?". In the desktop app, the ohmail Cloud sign-in offers "Create one in your browser"
+when you have no account yet, and a Cloud account with no mailbox gets an "Open setup in browser" button
+under Settings → Mailboxes. The Mac App Store build shows neither button and says where mailboxes are
+connected instead. On the phone, the ohmail Cloud door now says to connect your mailbox on the web before
+pairing.
+
+### Trial mails no longer promise to keep organizing a mailbox that was never connected
+
+On ohmail Cloud, the "trial ends in two days" mail told an account with no mailbox connected to subscribe "to keep
+ohmail organizing your mailbox", and the closing mail said ohmail had stopped organizing it. Such an account now
+gets its own version of both: it says no mailbox is connected, its button signs in if needed and opens the
+setup's mailbox step, it names Connect Outlook under Settings → Mailboxes for a Microsoft 365 work or school
+mailbox, and a reply reaches support.
+Accounts with a mailbox get the same mails as before, and the "Open your ohmail account" button in every account
+mail now opens the account settings instead of a missing page.
+
+### Erasing a mailbox frees its storage on ohmail Cloud
+
+On ohmail Cloud, "Remove and erase" deleted the mailbox's letters but left their size on the account's
+storage count. The count then stayed too high for good, and once it neared the plan's limit ohmail emptied
+the text of older letters in the mailboxes the person kept, to make room it did not need. Erasing a mailbox
+now takes its letters off the count, the background trim waits while an erase is still running, and for an
+account that has erased a mailbox the count is checked against the stored letters before any text is
+emptied. The release recounts those accounts too. The letters themselves always stayed complete on the
+person's own mail server.
+
+### ohmail Cloud checks its storage count before emptying older letters
+
+On ohmail Cloud, an account at 90% of its plan's storage now has its count checked against the stored
+letters once a day, before any older letter's text is emptied to make room. A count that had drifted above
+the real total no longer empties the text of letters the person kept. For each account ohmail Cloud also
+records how many letters' text it has emptied for space, when it last did so (and first, for accounts where
+that happens after this release), and the month from which every letter still keeps its text. Letters that
+arrive while the storage is full and are stored without their text are counted apart and never move that
+month. The letters themselves stay complete on the person's own mail server.
+
+### ohmail Cloud tells you when it stops storing the text of older letters
+
+When an account's stored letter text reaches its plan's limit, ohmail Cloud empties the text of the oldest
+letters to make room for new mail. Until now nobody was told. The web app, the desktop app on ohmail Cloud
+and the phone now show a one-time notice when that first happens: how many letters, the month from which
+text is kept (and how many letters arrived while the storage was full and were stored without their text),
+that those letters stay complete in your mailbox on your mail server and stay listed and findable, and what
+keeps more text from now on (a bigger plan during a trial, a bigger plan or the storage add-on on an active
+subscription). Once the account is well under its limit again, after an upgrade for instance, the notice
+says the text was emptied under the plan at the time and offers nothing. Settings → Subscription on the web
+shows the stored text against the plan's limit, with the same count and month. The note on an emptied
+letter no longer suggests that a bigger plan brings its text back.
+
+### A forward can send only the files the person kept
+
+The send route takes the list of the original's files a forward should carry, and the server sends exactly
+those; without the list every file goes, as before. A file named in the list that is not one of the
+original's own is refused and nothing is sent. `GET /hello` announces it as `features.forwardParts`, so
+the apps can offer removing a forwarded file only where the server honours it. On your own server this
+needs the server updated with the apps.
+
 ## [0.30.3] — 2026-10-24
 
 ### News and Receipts open again on the web and the desktop
@@ -13288,7 +13684,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.3...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.4...HEAD
+[0.30.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.4
 [0.30.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.3
 [0.30.2]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.2
 [0.30.1]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.1

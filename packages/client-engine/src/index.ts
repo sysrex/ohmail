@@ -951,6 +951,7 @@ export {
 // Where a body's quoted history starts and ends — one reading for every reader. See `quoted-history.ts`.
 export {
   QUOTED_HISTORY_LIMITS,
+  isForwardSubject,
   quotedDomTree,
   quotedHistoryCut,
   quotedHistoryOfHtml,

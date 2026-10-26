@@ -454,6 +454,8 @@ export {
   senderKey,
   sendingMailboxId,
   triagePiles,
+  pileRowIdsOf,
+  FOLDED_PILES,
   tagsCrossView,
   threadOf,
   isForwardedByUs,
@@ -486,7 +488,7 @@ export {
 // The Ohbox as ROWS, one per conversation across its sections — the fold every surface draws.
 export {
   foldOhboxRows,
-  parkSubjectIds,
+  pileSubjectIds,
   ohboxRows,
   ohboxUnreadIds,
   ownFaceOfRow,

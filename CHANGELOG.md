@@ -21,6 +21,139 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.7] — 2026-10-26
+
+### A message you read turns read, under a long To list or with its sender line scrolled off
+
+A message sent to many people kept its unread dot in the Ohbox, and the blue line beside it in the
+reader, after you had read it: a To or Cc list taller than the reader kept its sender line and its
+first lines from being on screen at the same moment. In a long conversation, which opens at its newest
+message, the message above the newest stayed unread the same way when its sender line sat just above
+the top of the reader while the rest of it was on screen. The read rule is now one and the same for
+every message on web, desktop, ohmail Cloud and the phone, which gains it too: A message turns read
+once its first lines have stayed on screen for 0.7 s and its sender line has been fully on screen or
+the end of its text has been on screen (a preview counts), in either order. Nothing that was never on
+screen turns read; Mark unread starts it over. On web and desktop the 0.7 s count starts once you open
+the message, press in it or scroll the reader yourself, so a message you only pass with j and k stays
+unread.
+
+### A letter to many people no longer fills the reader with addresses
+
+The reading pane names the people a message went to instead of listing every address: To and Cc each take
+one line, and a field of more than three folds to its first names and a count, as in "To you, Alain Gozzer,
+Onanong Hemsiri and 31 others". Pressing the count shows everyone as names that wrap in a block of about
+eight lines, which scrolls on its own for very long lists, so the message text stays in reach. Your own
+address reads "you" and comes first in its field. Each name still opens its contact menu, and the address
+shows on hover. The keyboard stays on the control that folds the list back, and a screen reader hears the
+field, the names and the count. Cards in News and Receipts fold the same way at two names. Desktop and web.
+
+### Typing a reply in the reader no longer flickers the window
+
+Replying to a letter opened in the reader, as from News or Receipts, made the sidebar and the
+rest of the window flicker with every keystroke, most visibly in the desktop app on Linux. The
+sidebar and the page behind the reader now stay still while you type (desktop and web).
+
+### A picture in the attachment preview fits the window whole
+
+A picture taller or wider than the preview is shown whole, scaled down to fit with its proportions kept, and
+no longer needs scrolling; a smaller one keeps its own size. This holds on the web at a larger Text size too.
+PDF pages and text still scroll. Desktop and web.
+
+### A long conversation's squares in the list are whole, and the older ones are counted
+
+In the message list, a conversation too long for its row's squares showed a sliver of a square at the
+left end, or simply hid the oldest without a sign. The row now draws only whole squares, keeps the
+newest, and starts the line with a quiet +N for the older messages that do not fit. On desktop and the
+web, in both looks.
+
+### The phone's list rows say how many squares a long conversation leaves out
+
+On the phone, a closed row's conversation squares now keep the newest ones that fit and lead with a quiet "+N" for the older ones they leave out, so a long conversation in the two-pane list no longer shows fewer squares than it has messages without a sign. In the open conversation's row, a reply that arrives is scrolled into view whole beside the square you stopped at, where both fit, instead of sitting cut at the row's edge.
+
+### The Omarchy frame matches Hyprland's gaps
+
+With the Omarchy look, the gap from the window edge to a column's border now equals the gap between two
+columns, measured as Hyprland measures its own gaps: to the outer edge of the border. Before, the 2px
+borders stood inside the gaps, so the edge read 8px and the gap between columns 6px where Hyprland's own
+windows sit 10px apart. A gaps change made with `hyprctl` or a reloaded Hyprland config now reaches an
+open window within a few seconds, not only at the next launch (desktop). The thread squares between the
+list and the open conversation keep the same 10px to the border on each side.
+
+### Drafts open on two devices keep both versions, and Discard cancels a send that waits
+
+A reply draft open in the web app or the desktop app, and any draft open in the phone's composer, no
+longer writes over words another device saved into it meanwhile. Saving or sending over the newer
+version keeps that version in the draft and keeps what you typed as a new draft, and says so (web,
+desktop, phone). That holds for a phone send that waited and was refused after its composer closed.
+
+A draft whose save was refused keeps its words when you open it again from Drafts. Opening another
+draft, or writing to a contact, over words no save holds is refused with a sentence instead of
+replacing them (web, desktop).
+
+Discard in Drafts on a letter whose send is waiting to go cancels that send first, so nothing goes and
+no "Sending didn't work" follows. When the send is already on its way, or the cancel cannot be
+confirmed, nothing is discarded and the row says why. A draft whose send waits says "Waiting to send",
+and a reply waiting to go with no draft of its own no longer shows up in Drafts as an interrupted send
+(web, desktop, Cloud).
+
+### Folding the phone keeps the conversation you are reading
+
+On a foldable phone, folding to the outer screen with a conversation open now shows that conversation, and Back
+returns to the list. Before, a sender left open in the Screener on the inner screen was put on top of it, with
+its decision buttons, and the conversation was only one Back away. The Screener now opens that sender when you
+go back to the Screener tab.
+
+On an iPad in a resizable window, the Ohbox title and Mark all read now sit below the window controls instead of
+under them (phone).
+
+### The phone's account notices stay clear of the status bar and the rail, and a draft sent from Drafts › Edit leaves its page
+
+On a foldable's inner screen the storage notice could sit under the status bar, and with two panes
+under the navigation rail, which cut its first words and put Dismiss over the Screener tab. The
+storage notice and the trial or payment notice now stand below the status bar and beside the rail.
+After a draft opened from More › Drafts › Edit is sent, the phone returns to Drafts instead of staying
+on a page that said the draft was no longer there (phone).
+
+### A waiting send you cancel or discard on the phone stays the way you left it
+
+On the phone, a message waiting for the network that you cancelled and then discarded in Drafts came
+back as a draft the next time ohmail started, with its subject and text, and stayed after the network
+returned. A discard now sticks. Cancel send keeps the message as one draft, with its files, instead
+of a second copy that says to check Sent first after a restart. Nothing was sent either way.
+
+### The phone says when it cannot keep a mailbox's settings
+
+On a phone that organizes its own mailbox, Settings and the Ohbox showed only "Organizing" while every write
+of the mailbox's settings to the mail server failed, so the rules and screening choices made there never
+reached the person's other devices and nothing said so. The phone now reads the same block the desktop does
+and says that the settings cannot be saved to or read from the mail server, with the refusal's code where
+there is one. Stop stays offered, and the sentence goes away at the first settings write that works.
+
+### A letter filed elsewhere while another device reads its Inbox shows in its new folder
+
+When another device moved a letter out of the Inbox (into News, for example) while this device
+was reading the Inbox and the destination folder, ohmail could see both copies at once and then
+keep showing the letter in the Ohbox, unread, with the destination folder not listing it. Pull new
+mail did not change that. The letter now follows its remaining copy as soon as the Inbox copy is
+gone, whichever order the server reports the two in (desktop, web, phone, Cloud, your own server).
+A letter already left behind this way moves to its folder the next time it is moved on the server.
+
+### Back from a letter at phone width keeps the cursor on that letter
+
+On the web app and the desktop app at phone width, Back from a letter opened in the Ohbox left the
+list's cursor on the next row, so the next key or verb acted on a letter you had not read. The
+cursor now stays on the letter you just read, as it does at wider widths, and goes with it when it
+files under Earlier; j and k then move on from its place there.
+
+### Embedded pictures draw from servers that answer nested parts' headers wrongly
+
+A picture embedded in a message, such as a signature logo or a pasted screenshot, was refused as
+"could not be verified" and drawn as an empty box when the mail server answered the headers of a
+nested part with its parent's. GreenMail does this. The picture's bytes then arrived still encoded.
+They are now decoded by the encoding the server's own message structure declares, and served only
+when they match the file stored at sync, on every app. On the phone the reader also redraws as soon
+as an embedded picture arrives. Pictures from the web still wait for Show images.
+
 ## [0.30.6] — 2026-10-26
 
 ### A foldable keeps your place and marks nothing read when a pane change shortens the conversation
@@ -14038,7 +14171,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.6...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.7...HEAD
+[0.30.7]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.7
 [0.30.6]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.6
 [0.30.5]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.5
 [0.30.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.4

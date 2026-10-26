@@ -78,6 +78,27 @@
   </screenshots>
 
   <releases>
+    <release version="0.30.7" date="2026-10-26">
+      <description>
+        <ul>
+          <li>A message you read turns read, under a long To list or with its sender line scrolled off</li>
+          <li>A letter to many people no longer fills the reader with addresses</li>
+          <li>Typing a reply in the reader no longer flickers the window</li>
+          <li>A picture in the attachment preview fits the window whole</li>
+          <li>A long conversation's squares in the list are whole, and the older ones are counted</li>
+          <li>The phone's list rows say how many squares a long conversation leaves out</li>
+          <li>The Omarchy frame matches Hyprland's gaps</li>
+          <li>Drafts open on two devices keep both versions, and Discard cancels a send that waits</li>
+          <li>Folding the phone keeps the conversation you are reading</li>
+          <li>The phone's account notices stay clear of the status bar and the rail, and a draft sent from Drafts › Edit leaves its page</li>
+          <li>A waiting send you cancel or discard on the phone stays the way you left it</li>
+          <li>The phone says when it cannot keep a mailbox's settings</li>
+          <li>A letter filed elsewhere while another device reads its Inbox shows in its new folder</li>
+          <li>Back from a letter at phone width keeps the cursor on that letter</li>
+          <li>Embedded pictures draw from servers that answer nested parts' headers wrongly</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.30.6" date="2026-10-26">
       <description>
         <ul>
@@ -172,28 +193,6 @@
       <description>
         <ul>
           <li>News and Receipts open again on the web and the desktop</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.30.2" date="2026-10-24">
-      <description>
-        <ul>
-          <li>A letter filed from the sender sheet stays filed</li>
-          <li>Quoted history folds in every message of a thread</li>
-          <li>The squares beside a conversation stay still while it scrolls</li>
-          <li>Send closes the message at once and finishes in the sidebar</li>
-          <li>News and Receipts open at once</li>
-          <li>Waiting filings are named, explained and can be retried or left where they are</li>
-          <li>Letters left in the old News folder reach News</li>
-          <li>A sender's other letters stay where you left them when a later rule applies to past mail</li>
-          <li>A dead connection no longer freezes sync or your changes until a reload</li>
-          <li>Phone: a message sent without network still goes after you close the composer</li>
-          <li>Restoring a letter before its delete reached the server brings it back</li>
-          <li>A phone or computer on a bad network keeps organizing its own mailbox</li>
-          <li>The phone keeps your place in a conversation through a rotation, a fold or a display size change</li>
-          <li>Opening a message no longer keeps the previous mailbox screens in memory</li>
-          <li>Park and Later open the next message, and Search's filters work from the keyboard</li>
-          <li>A Google or Thunderbird invitation lists invite.ics once</li>
         </ul>
       </description>
     </release>

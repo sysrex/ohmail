@@ -21,6 +21,166 @@ release gathers those files into its own section below.
 Signed installers — a real Apple Developer ID and an Authenticode certificate. See
 [Roadmap](README.md#roadmap).
 
+## [0.30.6] — 2026-10-26
+
+### A foldable keeps your place and marks nothing read when a pane change shortens the conversation
+
+On a foldable phone, the reader could lose your place when it moved to a pane where the conversation ends before the point you stood at: rotating back to one pane, unfolding from the half-folded book posture, folding the book posture shut to the outer screen, or unfolding from the outer screen into two panes. It came back at the conversation's first message and marked the messages there read on the server. 0.30.4's notes said rotations and folds kept your place "(and back)" with nothing marked read; that was not true on these paths. The reader now returns to where you were and reads nothing until it stands there.
+
+### Parked and Answer later hold a conversation as one row
+
+A conversation in Parked or Answer later is now one row, showing the newest letter from the other side,
+where it used to be one row per message, each saying how many messages the conversation had. The counts
+on the rail, on the pile tabs and in More count conversations. Taking the row out, moving it to the other
+pile, or resurfacing it acts on every message of the conversation in that pile at once, with one
+sentence and one Undo. Answer later on a conversation in the Ohbox now takes the whole conversation,
+your own reply included, the way Park does, so the conversation leaves the Ohbox instead of staying
+there. This is the same on desktop, web and phone.
+
+On desktop and web, sending a reply now takes the whole conversation out of Answer later, not only the
+message you answered.
+
+### News and Receipts mark only what you saw after a jump
+
+Jumping deep into News or Receipts, from a search result for example, and then scrolling no longer marks
+the letters between where you were and where you landed as read, and neither does dragging the scrollbar
+or pressing End. Only letters that were on screen after the landing count, and leaving a pile never moves
+its "new since you were here" line back above letters you had already passed. On web and desktop.
+
+### Forward on the web and the desktop lists the original's files
+
+Forwarding on the web and in the desktop app now lists the files of the message you forward, embedded
+pictures and calendar invitations included, and lets you remove any of them before you send; only the
+ones you kept go. Nothing removed sends every file, as before. A forward trimmed on another device and
+finished here sends only the files kept there. A server that cannot leave files out keeps the list
+read-only and says that every file goes; a send that names its files there is refused in words and
+nothing is sent. Forwarded files over the forward limit, or more than your mail server takes, are said
+when you press Send, and nothing goes.
+
+### Forward on the phone lists the letter's files, and sends only the ones you keep
+
+On the phone, Forward sent every file of the original letter without listing any of them, past the sheet's
+own "Up to 3.0 MB total". The sheet now lists the original's files under "Forwarded with it", each with its
+size, and a file you remove is not forwarded when you send from the phone. The sentence under the files says
+what goes: the size of the forwarded files, and how much more you can add from the phone. Your choice stays
+with the forward when it is kept as a draft or the app is closed, and when the phone opens without a
+connection. If the letter's files cannot be read, the sheet says that all of them go. Against a server older
+than this release the files are listed without remove and all of them go, as before; if the server stops
+honouring the choice, the phone says so and sends nothing. If a forward with files removed could not be
+confirmed as sent, Send again sends nothing rather than every file: make it a draft again from the Drafts
+card and send it, and the files you removed stay out.
+
+### A forward trimmed on the phone sends only the kept files from any device
+
+A forward draft kept on the phone now saves the files you kept with the draft, so finishing it on the
+web or the desktop app sends only those. A forward draft trimmed on the web or the desktop opens on the
+phone listing only the files kept there, and sends only those. This needs a server with the matching
+update.
+
+### The Screener keeps the sender you are reading, and Mark all spam asks first
+
+A sender who arrives in the Screener while you are reading another one no longer takes the
+selection, so `o` or any other decision key files the sender on screen. A newer letter from the
+sender you picked keeps them selected, and so does a suggestion that moves them out of the filter
+you are working in. After a decision the selection moves to the next undecided sender down, else
+the one above, never onto a sender already decided and never to the top of the list; when nobody
+is left, nothing is selected until you pick a sender (web and desktop).
+
+`s` in the Screener list now opens the selected sender's destinations, as it does in the reader,
+and moves no mail; `o`, `r`, `c`, `n` or `x` then files that one sender. Mark all spam has no key
+and asks first, naming how many waiting senders it moves; a sender who arrives while it asks is not
+one of them, and Cancel or `Esc` leaves them all waiting. It also no longer reaches a sender whose
+decision is still open in another tab.
+
+### The keyboard ring stays on the message your next key acts on
+
+After u (Mark unread) moved a message up under New, the focus ring stayed on the message that slid
+into its old place, so a screen reader announced one message while the next key acted on another.
+The ring now goes with the message. When a key files a message and nothing is selected after it
+(Close after an action, or a narrow window), the ring rests on the list instead of on a message
+nobody picked, and j takes it from there.
+
+In History, choosing a year or a month by keyboard now selects that period's first message and puts
+the focus on it, and j and k walk History as the arrows do.
+
+z right after Park, Later or another action now undoes it, also when pressed before the Undo toast
+appears.
+
+On the Linux desktop, a screen reader now hears each message's time, read state, attachment, thread
+size and tags, not only the sender and the subject (WebKitGTK did not pass them on).
+
+On the desktop signed in to ohmail Cloud, the diagnostics under Help & contact now carry the account
+id, as on the web; a standalone install still says none.
+
+### A big first import keeps setup's promises about the Screener
+
+When you agree on the window step, every letter inside the window from a sender you have not decided
+about now reaches the Screener, however large the mailbox, not only the newest thousand. Mail ohmail
+finishes reading after you agree is included. Before, senders whose letters sat further back stayed
+in the Ohbox as new mail.
+
+"Screen N" now takes only letters inside the window you chose, as the window step said. A letter
+counts as inside only when both its date and its arrival on the server are, so mail a migration tool
+copied in recently keeps its place, and changing the window while the first sort runs never widens
+it. Older mail stays in the Inbox and is not moved on your server.
+
+On the phone, the Ohbox offers "Screen N" as the import fills it, without leaving the tab and coming
+back.
+
+While the first import runs, the window step names the whole count, not a figure stuck at 1,000.
+When the mail server cannot be reached, setup says that ohmail is reconnecting, and says so again
+when the connection is back. On desktop, web, phone, Cloud and your own server.
+
+### A message sent just before closing keeps its Sent copy when the mail server was slow or had stopped answering
+
+A message sent shortly after another one, while the mail server was slow or had stopped answering,
+could go out without its copy in Sent if ohmail closed within the next seconds. It now waits the way
+the first message does, and goes with its copy when ohmail starts again (desktop, and the phone on its
+own). While the server stays silent, such a message is not sent, and ohmail says so.
+
+### ohmail Cloud brings back the text of emptied letters when there is room again
+
+When an account's stored letter text reaches its plan's limit, ohmail Cloud empties the text of the oldest
+letters. Until now that text stayed gone after an upgrade, the storage add-on or erasing a mailbox. ohmail
+Cloud now fetches it back from your mail server once there is room, newest letters first and a little at
+a time, up to nine tenths of the plan's storage. During a trial's 4 GB of storage and the 14 days after the
+first payment, it fetches text back only up to nine tenths of your plan's own limit, so nothing it brings
+back is emptied again when that limit applies. It only reads your mailbox and changes nothing there.
+Letters no longer on your mail server stay without their text, and so do the letters of a mailbox you
+removed, which ohmail no longer reads. The web app, the desktop app on ohmail Cloud and the phone show the
+text as it returns. The storage notice says that more room brings the text back, or that there is room
+again and it is coming back, for the mailboxes ohmail still reads; it says that a bigger plan does not bring
+emptied text back only when ohmail reads none of your mailboxes, and says neither while a mailbox is still
+on its first import. The note on an emptied letter says its text comes back when there is room, and on a
+removed mailbox's letter that it does not. A count of emptied letters carried over without a date gets
+one at the next emptying.
+
+### Importing saved settings no longer fails a press made at the same moment
+
+Importing another ohmail's saved settings, or the organizer finishing or refusing such an import, could
+abort a triage or Screener press made in the same instant, which then failed with a server error. Both now go
+through. Cloud and your own server.
+
+### A press made beside a mailbox change no longer fails
+
+Renaming a mailbox or changing its password, signing it in again, agreeing again to organize it, saving
+settings for two mailboxes at once, or deleting the account could abort a triage, delete, restore, folder or
+thread-merge press made at the same moment, and one side failed with a server error. Both now go through.
+Cloud and your own server.
+
+### A folder change made beside a Screener decision no longer fails
+
+Creating, renaming or deleting a folder, or saving a mailbox's folder or signature settings, at the same
+moment as a Screener decision in the same account could abort, and the press failed with a server error. Both
+now go through. Dismissing a failed folder change while the account was being deleted no longer leaves a sync
+record of the deleted account behind. Cloud and your own server.
+
+### The web app runs Next.js 15.5.28
+
+Next.js 15.5.28 fixes two cache-poisoning flaws in self-hosted servers, where a crafted request could
+leave another visitor a wrong or broken copy of a page, and a denial of service through Server Actions.
+The web image for your own server and the web app on ohmail Cloud are built on it.
+
 ## [0.30.5] — 2026-10-25
 
 ### Every conversation's row has rounded squares in the paper look
@@ -13878,7 +14038,8 @@ no network in any of them.
   Gatekeeper, SmartScreen and the AppImage's executable bit all need a manual
   step, and that is a real cost of a preview rather than something to gloss over.
 
-[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.5...HEAD
+[Unreleased]: https://github.com/trafficflowhq/ohmail/compare/v0.30.6...HEAD
+[0.30.6]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.6
 [0.30.5]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.5
 [0.30.4]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.4
 [0.30.3]: https://github.com/trafficflowhq/ohmail/releases/tag/v0.30.3
